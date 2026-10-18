@@ -277,6 +277,57 @@ h3.term{font-size:1.3rem}
 .fb.f2{border-color:var(--good);background:color-mix(in srgb,var(--good) 12%,var(--card))}
 .fb.f1{border-color:var(--g2);background:color-mix(in srgb,var(--g2) 12%,var(--card))}
 .fb.f0{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 12%,var(--card))}
+/* hình minh họa */
+.il{display:flex;justify-content:center;margin:6px 0}
+.il svg{width:150px;max-width:100%;height:auto;overflow:visible}
+.il.wide svg{width:100%;max-width:340px}
+.il path,.il line,.il circle,.il rect,.il polygon,.il polyline,.il ellipse{stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.il .s{fill:var(--soft)}.il .w{fill:var(--card)}.il .h{fill:var(--hi)}
+.il .a{stroke:var(--pen);stroke-width:4}.il .d{stroke-dasharray:4 3}.il .thin{stroke-width:1.2}
+.il .dot{fill:var(--ink);stroke:none}.il .dotH{fill:var(--hi);stroke:var(--ink);stroke-width:2}
+.il text{font:700 10px 'Be Vietnam Pro','Noto Sans',sans-serif;fill:var(--pen);stroke:none;text-anchor:middle}
+.il text.big{font-size:20px;fill:var(--ink)}
+/* nhìn hình */
+.opts.pics{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt.pic{padding:8px;display:flex;align-items:center;justify-content:center;min-height:96px}
+.opt.pic .il{margin:0;width:100%}.opt.pic .il svg{width:100%;max-width:150px}
+.prompt .il svg{width:min(210px,70%)}
+.osub{display:block;font-weight:500;font-size:.78rem;color:var(--muted)}
+.pres .il{--ink:var(--on-board);--soft:rgba(255,255,255,.13);--card:rgba(255,255,255,.05);--pen:var(--hi)}
+.pres .il svg{width:min(78vw,340px)}
+.pres .il text{fill:var(--hi)}
+/* cờ xúc xắc */
+.bgsvg{width:100%;height:auto;display:block}
+.bgtx{font-family:var(--f-d);font-weight:700;font-size:13px;fill:var(--ink)}
+.bgtx.big{font-size:12px;text-anchor:middle}
+.bgcard{padding:8px;max-width:520px;width:100%;align-self:center}
+.bgp{display:flex;flex-wrap:wrap;gap:8px}
+.bgpl{display:flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;border:2px solid var(--line);background:var(--card);font-size:.88rem}
+.bgpl.on{border-color:var(--ink);box-shadow:0 3px 0 var(--ink);background:var(--hi);color:var(--on-hi)}
+.bgact{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.bgturn{margin:0;font-family:var(--f-d);font-weight:700;font-size:1.1rem}
+.bgdie{display:block}
+/* nhóm từ, cách đọc số */
+.eq{display:flex;flex-wrap:wrap;gap:6px;align-items:flex-end;margin:10px 0}
+.eqb{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:52px;padding:6px 8px;border:2px solid var(--ink);border-radius:12px;background:var(--soft)}
+.eqb b{font-size:1.4rem;line-height:1.1}
+.eqb>span{font-size:.8rem;font-weight:700;color:var(--pen);min-height:1.1em}
+.eqb i{font-style:normal;font-size:.72rem;color:var(--muted)}
+.eqo{font-size:1.4rem;font-weight:700;align-self:center}
+.grow{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.grow>div{display:flex;flex-wrap:wrap;gap:2px 8px;align-items:baseline}
+.grow b{color:var(--pen)}
+.grow small{flex-basis:100%;color:var(--muted);font-size:.82rem}
+.gx mark{background:var(--hi);color:var(--on-hi);border-radius:4px;padding:0 3px}
+.bad{display:flex;flex-direction:column;gap:1px;border-left:4px solid var(--bad);padding:6px 10px;margin-top:6px;background:rgba(193,58,44,.07);border-radius:8px;font-size:.92rem}
+.bad .no{color:var(--bad);font-weight:600}
+.bad .yes{color:var(--good);font-weight:600}
+.bad small{color:var(--muted)}
+.warn{border:2px dashed var(--hi);background:rgba(255,210,63,.16);border-radius:14px;padding:10px 12px;font-size:.9rem;margin-top:8px}
+.nres{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;padding:10px 12px;border:2px solid var(--pen);border-radius:14px;background:var(--soft)}
+.nres.alt{border-style:dashed;background:transparent}
+.nmain{font-weight:700;font-size:1.1rem}
+.nlist .nsym{flex:none;min-width:84px;font-weight:700;font-size:1.05rem}
 /* nhận diện mới */
 .mascot{display:block;flex:none}
 .logo svg{width:100%;height:100%}
@@ -341,8 +392,8 @@ const TERMS=[
 ["product", "/ˈprɑːdʌkt/", "tích", 2, "so", "The product of 3 and 4 is 12.", "Tích của 3 và 4 là 12.", ""],
 ["multiplication table", "/ˌmʌltɪplɪˈkeɪʃən ˈteɪbəl/", "bảng nhân", 2, "so", "Learn the five times table.", "Học bảng nhân 5.", ""],
 ["divide", "/dɪˈvaɪd/", "chia", 2, "so", "Divide 12 by 3.", "Hãy chia 12 cho 3.", ""],
-["dividend", "/ˈdɪvɪdend/", "số bị chia", 2, "so", "In 12 ÷ 3, the dividend is 12.", "Trong 12 ÷ 3, số bị chia là 12.", ""],
-["divisor", "/dɪˈvaɪzər/", "số chia", 2, "so", "In 12 ÷ 3, the divisor is 3.", "Trong 12 ÷ 3, số chia là 3.", ""],
+["dividend", "/ˈdɪvɪdend/", "số bị chia", 2, "so", "In 12 : 3, the dividend is 12.", "Trong 12 : 3, số bị chia là 12.", ""],
+["divisor", "/dɪˈvaɪzər/", "số chia", 2, "so", "In 12 : 3, the divisor is 3.", "Trong 12 : 3, số chia là 3.", ""],
 ["quotient", "/ˈkwoʊʃənt/", "thương", 2, "so", "The quotient of 12 and 3 is 4.", "Thương của 12 và 3 là 4.", ""],
 ["estimate", "/ˈestɪmeɪt/", "ước lượng", 2, "so", "Estimate the answer before you calculate.", "Hãy ước lượng đáp số trước khi tính.", ""],
 ["more than", "mɔr ðæn", "nhiều hơn", 2, "so", "Ben has five more than Lan.", "Bình có nhiều hơn Lan năm cái.", ""],
@@ -378,8 +429,8 @@ const TERMS=[
 ["value", "/ˈvæljuː/", "giá trị (của biểu thức)", 3, "so", "Find the value of the expression.", "Tìm giá trị của biểu thức.", ""],
 ["commutative property", "kəˈmjutətɪv ˈprɑpərti", "tính chất giao hoán", 3, "so", "2 + 5 = 5 + 2 is the commutative property.", "2 + 5 = 5 + 2 là tính chất giao hoán.", "Với trẻ nhỏ: 'You can swap the numbers.'"],
 ["associative property", "əˈsoʊʃiətɪv ˈprɑpərti", "tính chất kết hợp", 3, "so", "(2 + 3) + 4 = 2 + (3 + 4) is the associative property.", "(2 + 3) + 4 = 2 + (3 + 4) là tính chất kết hợp.", ""],
-["exact division", "ɪɡˈzækt dɪˈvɪʒən", "phép chia hết", 3, "so", "24 ÷ 6 is an exact division.", "24 ÷ 6 là phép chia hết.", "Thông dụng hơn: 'division with no remainder'."],
-["division with remainder", "dɪˈvɪʒən wɪð rɪˈmeɪndər", "phép chia có dư", 3, "so", "25 ÷ 6 is a division with remainder.", "25 ÷ 6 là phép chia có dư.", ""],
+["exact division", "ɪɡˈzækt dɪˈvɪʒən", "phép chia hết", 3, "so", "24 : 6 is an exact division.", "24 : 6 là phép chia hết.", "Thông dụng hơn: 'division with no remainder'."],
+["division with remainder", "dɪˈvɪʒən wɪð rɪˈmeɪndər", "phép chia có dư", 3, "so", "25 : 6 is a division with remainder.", "25 : 6 là phép chia có dư.", ""],
 ["one-digit number", "wʌn ˈdɪdʒət ˈnʌmbər", "số có một chữ số", 3, "so", "Multiply by a one-digit number.", "Nhân với số có một chữ số.", ""],
 ["even number", "/ˈiːvən ˈnʌmbər/", "số chẵn", 4, "so", "Ten is an even number.", "Mười là số chẵn.", ""],
 ["odd number", "/ɑːd ˈnʌmbər/", "số lẻ", 4, "so", "Seven is an odd number.", "Bảy là số lẻ.", ""],
@@ -388,7 +439,7 @@ const TERMS=[
 ["natural number", "ˈnætʃrəl ˈnʌmbər", "số tự nhiên", 4, "so", "0, 1, 2, 3 are natural numbers.", "0, 1, 2, 3 là các số tự nhiên.", ""],
 ["sequence", "ˈsikwəns", "dãy số", 4, "so", "Continue the sequence: 2, 4, 6, …", "Viết tiếp dãy số: 2, 4, 6, …", ""],
 ["long multiplication", "lɔŋ ˌmʌltɪplɪˈkeɪʃən", "nhân nhiều chữ số (đặt tính)", 4, "so", "Use long multiplication for 34 × 12.", "Dùng cách đặt tính để tính 34 × 12.", ""],
-["long division", "lɔŋ dɪˈvɪʒən", "chia nhiều chữ số (đặt tính)", 4, "so", "Use long division for 572 ÷ 21.", "Dùng cách đặt tính để tính 572 ÷ 21.", ""],
+["long division", "lɔŋ dɪˈvɪʒən", "chia nhiều chữ số (đặt tính)", 4, "so", "Use long division for 572 : 21.", "Dùng cách đặt tính để tính 572 : 21.", ""],
 ["variable", "ˈvɛriəbəl", "chữ đại diện cho số", 4, "so", "In a + 5, the letter a is a variable.", "Trong a + 5, chữ a đại diện cho một số.", "Tiểu học có thể nói 'a letter stands for a number'."],
 ["distributive property", "dɪˈstrɪbjətɪv ˈprɑpərti", "tính chất phân phối", 4, "so", "3 × (4 + 5) = 3 × 4 + 3 × 5.", "3 × (4 + 5) = 3 × 4 + 3 × 5.", ""],
 ["unitary method", "ˈjunɪtɛri ˈmɛθəd", "rút về đơn vị", 4, "so", "Use the unitary method: find the cost of one first.", "Dùng cách rút về đơn vị: tìm giá một cái trước.", "Mỹ thường nói 'unit rate'."],
@@ -543,6 +594,8 @@ const TERMS=[
 ["square decimetre", "skwɛr ˈdɛsɪmitər", "đề-xi-mét vuông", 4, "dl", "The area is 5 square decimetres.", "Diện tích là 5 đề-xi-mét vuông.", "Mỹ: square decimeter."],
 ["square millimetre", "skwɛr ˈmɪlɪmitər", "mi-li-mét vuông", 4, "dl", "The area is 20 square millimetres.", "Diện tích là 20 mi-li-mét vuông.", "Mỹ: millimeter."],
 ["century", "ˈsɛntʃəri", "thế kỉ", 4, "dl", "One century is one hundred years.", "Một thế kỉ là một trăm năm.", ""],
+["yến", "iən", "yến (1 yến = 10 kg)", 4, "dl", "Three yến is thirty kilograms.", "Ba yến là ba mươi ki-lô-gam.", "Đơn vị riêng của Việt Nam, tiếng Anh không có từ tương ứng 1–1: giữ nguyên 'yến' khi nói, và quy đổi sang kilograms để người nghe quốc tế hiểu. Cách nói: 'one yến, that is ten kilograms'."],
+["tạ", "taː", "tạ (1 tạ = 100 kg)", 4, "dl", "A cow weighs about three tạ, that is three hundred kilograms.", "Con bò nặng khoảng ba tạ, tức là ba trăm ki-lô-gam.", "Đơn vị riêng của Việt Nam, tiếng Anh không có từ tương ứng 1–1: giữ nguyên 'yến' khi nói, và quy đổi sang kilograms để người nghe quốc tế hiểu. 1 tấn = 10 tạ = 1000 kg (1 tonne)."],
 ["speed", "/spiːd/", "vận tốc", 5, "dl", "Speed equals distance divided by time.", "Vận tốc bằng quãng đường chia cho thời gian.", ""],
 ["distance", "/ˈdɪstəns/", "quãng đường", 5, "dl", "The distance is 60 kilometres.", "Quãng đường dài 60 ki-lô-mét.", ""],
 ["volume", "/ˈvɑːljuːm/", "thể tích", 5, "dl", "Find the volume of the cuboid.", "Tìm thể tích của hình hộp chữ nhật.", ""],
@@ -837,8 +890,8 @@ const READS=[
 ["35 + 48 = 83","Thirty-five plus forty-eight equals eighty-three.","Ba mươi lăm cộng bốn mươi tám bằng tám mươi ba.",2],
 ["4 h 30 min","It is half past four.","4 giờ 30 phút (4 giờ rưỡi).",2],
 ["3 cm","Three centimetres.","Ba xăng-ti-mét.",2],
-["24 ÷ 4 = 6","Twenty-four divided by four equals six.","Hai mươi tư chia bốn bằng sáu.",3],
-["17 ÷ 5 = 3 (dư 2)","Seventeen divided by five is three, remainder two.","17 chia 5 được 3, dư 2.",3],
+["24 : 4 = 6","Twenty-four divided by four equals six.","Hai mươi tư chia bốn bằng sáu.",3],
+["17 : 5 = 3 (dư 2)","Seventeen divided by five is three, remainder two.","17 chia 5 được 3, dư 2.",3],
 ["3 × (4 + 2)","Three times, open bracket, four plus two, close bracket.","3 nhân trong ngoặc (4 cộng 2).",3],
 ["x + 8 = 15","x plus eight equals fifteen.","x cộng tám bằng mười lăm.",3],
 ["12 345","Twelve thousand, three hundred and forty-five.","Mười hai nghìn ba trăm bốn mươi lăm.",3],
@@ -870,7 +923,7 @@ const READS=[
 const LESSONS=[{
   id:"chia-du",g:3,dur:45,
   title:"Phép chia có dư",sub:"Chia đều và xử lý phần còn thừa",
-  math:["Thực hiện và giải thích phép chia có dư, ví dụ 17 ÷ 5 = 3 (dư 2).","Hiểu số dư luôn bé hơn số chia.","Thử lại: số chia × thương + số dư = số bị chia."],
+  math:["Thực hiện và giải thích phép chia có dư, ví dụ 17 : 5 = 3 (dư 2).","Hiểu số dư luôn bé hơn số chia.","Thử lại: số chia × thương + số dư = số bị chia."],
   of:["dividend","divisor","quotient","remainder","divide","share equally","left over"],
   forL:["I think the remainder is ___ because ___.","Can you check my answer, please?"],
   through:"Từ phát sinh trong tiết (ví dụ: each, group, equal). Ghi ở góc bảng và đọc lại cuối tiết.",
@@ -885,7 +938,7 @@ const LESSONS=[{
     stu:[["Each child gets ___ sweets.","Mỗi bạn được ___ viên kẹo.","gets"],
          ["There are ___ sweets left over.","Còn thừa ___ viên kẹo.","left over"]]},
    {t:"Làm quen bốn từ chính",min:7,lv:1,
-    act:["Dán thẻ từ lên bảng cạnh phép tính 17 ÷ 5 = 3 (dư 2).","Chỉ vào từng số khi đọc từ, cả lớp đọc theo hai lần.","Đọc từ, mời học sinh lên chỉ đúng số."],
+    act:["Dán thẻ từ lên bảng cạnh phép tính 17 : 5 = 3 (dư 2).","Chỉ vào từng số khi đọc từ, cả lớp đọc theo hai lần.","Đọc từ, mời học sinh lên chỉ đúng số."],
     say:[["This is the dividend. It is the number we divide.","Đây là số bị chia. Đó là số ta đem chia.","dividend|divide"],
          ["The divisor is the number we divide by.","Số chia là số ta chia cho.","divisor|divide by"],
          ["The quotient is the answer to the division.","Thương là kết quả của phép chia.","quotient|answer"],
@@ -893,8 +946,8 @@ const LESSONS=[{
          ["Repeat after me.","Nhắc lại theo cô/thầy.","Repeat"]],
     stu:[["This is the ___.","Đây là ___ (số bị chia, số chia, thương hoặc số dư).",""],
          ["The ___ is ___.","___ là ___.",""]]},
-   {t:"Giảng mẫu 17 ÷ 5",min:10,lv:1,
-    act:["Viết 17 ÷ 5 lên bảng. Vừa viết vừa nói từng bước bằng đúng các câu bên dưới.","Dùng hình vẽ chỉ 3 nhóm 5 và 2 phần còn thừa.","Viết phép thử 5 × 3 + 2 = 17 và đọc to."],
+   {t:"Giảng mẫu 17 : 5",min:10,lv:1,
+    act:["Viết 17 : 5 lên bảng. Vừa viết vừa nói từng bước bằng đúng các câu bên dưới.","Dùng hình vẽ chỉ 3 nhóm 5 và 2 phần còn thừa.","Viết phép thử 5 × 3 + 2 = 17 và đọc to."],
     say:[["Seventeen divided by five is three, remainder two.","17 chia 5 được 3, dư 2.","divided by|three|remainder two"],
          ["Five times three is fifteen.","5 nhân 3 bằng 15.","times|fifteen"],
          ["Seventeen minus fifteen is two.","17 trừ 15 bằng 2.","minus|two"],
@@ -902,8 +955,8 @@ const LESSONS=[{
          ["Let's check: five times three plus two equals seventeen.","Ta thử lại: 5 nhân 3 cộng 2 bằng 17.","check|plus|equals"],
          ["Is the remainder bigger or smaller than the divisor?","Số dư lớn hơn hay bé hơn số chia?","bigger|smaller"]],
     stu:[["The remainder is smaller than the divisor.","Số dư bé hơn số chia.","smaller|divisor"]]},
-   {t:"Làm cùng bạn: 23 ÷ 4",min:10,lv:2,
-    act:["Chia lớp thành các cặp, phát bảng con.","Viết 23 ÷ 4 lên bảng. Đáp án: thương 5, số dư 3.","Đi quanh lớp, nghe học sinh nói bằng khung câu và ghi lại lỗi hay gặp.","Mời 2–3 cặp nói đáp án trước lớp."],
+   {t:"Làm cùng bạn: 23 : 4",min:10,lv:2,
+    act:["Chia lớp thành các cặp, phát bảng con.","Viết 23 : 4 lên bảng. Đáp án: thương 5, số dư 3.","Đi quanh lớp, nghe học sinh nói bằng khung câu và ghi lại lỗi hay gặp.","Mời 2–3 cặp nói đáp án trước lớp."],
     say:[["Work in pairs and solve 23 divided by 4.","Làm việc theo cặp và giải 23 chia 4.","pairs|solve"],
          ["Discuss your answer with your partner.","Trao đổi đáp án với bạn.","Discuss|partner"],
          ["Show me your whiteboards.","Giơ bảng con lên cho cô/thầy xem.","Show|whiteboards"],
@@ -917,10 +970,10 @@ const LESSONS=[{
          ["Write your answer on your whiteboard.","Viết đáp án lên bảng con.","Write|whiteboard"],
          ["Read your answer to your partner.","Đọc đáp án cho bạn nghe.","Read|partner"]],
     stu:[["My answer is ___ remainder ___.","Đáp án của em là ___ dư ___.","answer|remainder"]],
-    probs:[["17 ÷ 5","Seventeen divided by five is three, remainder two.","17 chia 5 được 3, dư 2."],
-           ["23 ÷ 4","Twenty-three divided by four is five, remainder three.","23 chia 4 được 5, dư 3."],
-           ["29 ÷ 6","Twenty-nine divided by six is four, remainder five.","29 chia 6 được 4, dư 5."],
-           ["20 ÷ 3","Twenty divided by three is six, remainder two.","20 chia 3 được 6, dư 2."]]},
+    probs:[["17 : 5","Seventeen divided by five is three, remainder two.","17 chia 5 được 3, dư 2."],
+           ["23 : 4","Twenty-three divided by four is five, remainder three.","23 chia 4 được 5, dư 3."],
+           ["29 : 6","Twenty-nine divided by six is four, remainder five.","29 chia 6 được 4, dư 5."],
+           ["20 : 3","Twenty divided by three is six, remainder two.","20 chia 3 được 6, dư 2."]]},
    {t:"Tổng kết",min:5,lv:2,
     act:["Gọi 3–4 học sinh nói một điều đã học bằng khung câu.","Cả lớp đọc lại bốn từ chính.","Đọc lại các từ phát sinh ghi ở góc bảng."],
     say:[["Who can tell me one thing you learned?","Ai nói được một điều em đã học?","tell|learned"],
@@ -986,11 +1039,11 @@ LESSONS.forEach((L,li)=>{
 const S={
   view:"home",grade:store.get("grade",0),level:store.get("level",1),lang:store.get("lang","vi"),role:store.get("role","teacher"),
   theme:store.get("theme",""),name:store.get("name",""),onb:store.get("onb",false),
-  q:"",topic:"all",lookTab:"t",it:{dir:store.get("role","teacher")==="student"?"s":"t",cat:null},rev:{},
+  q:"",nq:"",nsty:store.get("nsty","uk"),topic:"all",lookTab:"t",it:{dir:store.get("role","teacher")==="student"?"s":"t",cat:null},rev:{},
   lesson:null,onlyFav:false,pmode:"flash",fc:{},qz:{},ty:{},sh:{src:"t",i:0},
   game:null,gsel:null,
   favs:store.get("favs",{}),known:store.get("known",{}),rate:store.get("rate",{}),custom:store.get("custom",[]),
-  best:store.get("best2",{v:0,m:0}),demo:1,iq:"",rp:null,rpSide:"",rpbest:store.get("rpbest",{}),used:store.get("used",{}),taught:store.get("taught",{}),last:store.get("last",null),
+  best:Object.assign({v:0,m:0,p:0},store.get("best2",{})),pic:{sub:"say",cur:null,score:0,n:0,last:null},demo:1,iq:"",rp:null,rpSide:"",rpbest:store.get("rpbest",{}),used:store.get("used",{}),taught:store.get("taught",{}),last:store.get("last",null),
   mine:"sv",drawer:false,confirmReset:false,pres:null,
   timer:{total:300,left:300,run:false,end:0}
 };
@@ -1105,10 +1158,12 @@ function structCard(id,showSit){
   return h+'</article>';
 }
 function cardHTML(id){
+  if(GRPR[id])return grpCard(id);
   if(WPR[id])return wpCard(id);
   if(STRR[id])return structCard(id,!(S.view==="inter"&&!S.iq.trim()));
   const rev=!!S.rev[id];const f=faceOf(id,S.level,rev);if(!f)return "";
   let h='<article class="card" data-card="'+esc(id)+'"><div class="row"><div class="head"><h3 class="'+f.cls+'">'+fbk(f.main)+'</h3>'+(f.kind==="t"&&f.sub?'<span class="ipa">'+esc(f.sub)+'</span>':'')+'</div><div class="acts">'+sayBtn(f.say)+(f.copy?copyBtn(f.say):'')+favBtn(id)+'</div></div>';
+  if(f.kind==="t")h+=ilFor(f.t.en);
   if(f.kind==="r"&&f.sub)h+='<p class="reading">'+fbk(f.sub)+'</p>';
   if(f.vi)h+='<p class="vi"'+(f.kind==="r"?' style="font-weight:500;color:var(--muted)"':'')+'>'+esc(f.vi)+'</p>';
   if(f.ex){const ls=f.ex.split("\n");h+='<p class="ex">'+fbk(ls[0])+(ls[1]?'<span>'+esc(ls[1])+'</span>':'')+'</p>';}
@@ -1304,14 +1359,14 @@ const WP_DATA=[
  "[Tên] có [số] [vật]. [Bạn ấy] chia đều cho [số] [người]. Mỗi [người] được bao nhiêu [vật]?",
  "[number] divided by [number] equals [number]. So each [person] gets [number] [things].",
  "[số] chia [số] bằng [số]. Vậy mỗi [người] được [số] [vật].",
- [["Mai has 20 sweets. She shares them equally among 4 friends. How many sweets does each friend get?","Mai có 20 cái kẹo. Bạn chia đều cho 4 người bạn. Mỗi bạn được bao nhiêu cái kẹo?","20 ÷ 4 = 5","Twenty divided by four equals five. So each friend gets five sweets.","20 chia 4 bằng 5. Vậy mỗi bạn được 5 cái kẹo."]]],
+ [["Mai has 20 sweets. She shares them equally among 4 friends. How many sweets does each friend get?","Mai có 20 cái kẹo. Bạn chia đều cho 4 người bạn. Mỗi bạn được bao nhiêu cái kẹo?","20 : 4 = 5","Twenty divided by four equals five. So each friend gets five sweets.","20 chia 4 bằng 5. Vậy mỗi bạn được 5 cái kẹo."]]],
 [3,["Chia có dư","Division with remainder"],["chia","divide"],
  "[number] [things] are put into groups of [number]. How many groups are there, and how many [things] are left over?",
  "Có [số] [vật] xếp thành các nhóm, mỗi nhóm [số]. Có bao nhiêu nhóm và còn thừa bao nhiêu [vật]?",
  "[number] divided by [number] is [number], remainder [number]. So there are [number] groups and [number] [things] are left over.",
  "[số] chia [số] được [số], dư [số]. Vậy có [số] nhóm và còn thừa [số] [vật].",
- [["17 sweets are put into bags of 5. How many bags are there, and how many sweets are left over?","Có 17 cái kẹo xếp vào các túi, mỗi túi 5 cái. Có bao nhiêu túi và còn thừa bao nhiêu cái kẹo?","17 ÷ 5 = 3 (dư 2)","Seventeen divided by five is three, remainder two. So there are three bags and two sweets are left over.","17 chia 5 được 3, dư 2. Vậy có 3 túi và còn thừa 2 cái kẹo."],
-  ["23 pencils are put into boxes of 4. How many boxes are there, and how many pencils are left over?","Có 23 cây bút chì xếp vào các hộp, mỗi hộp 4 cây. Có bao nhiêu hộp và còn thừa bao nhiêu cây bút chì?","23 ÷ 4 = 5 (dư 3)","Twenty-three divided by four is five, remainder three. So there are five boxes and three pencils are left over.","23 chia 4 được 5, dư 3. Vậy có 5 hộp và còn thừa 3 cây bút chì."]]],
+ [["17 sweets are put into bags of 5. How many bags are there, and how many sweets are left over?","Có 17 cái kẹo xếp vào các túi, mỗi túi 5 cái. Có bao nhiêu túi và còn thừa bao nhiêu cái kẹo?","17 : 5 = 3 (dư 2)","Seventeen divided by five is three, remainder two. So there are three bags and two sweets are left over.","17 chia 5 được 3, dư 2. Vậy có 3 túi và còn thừa 2 cái kẹo."],
+  ["23 pencils are put into boxes of 4. How many boxes are there, and how many pencils are left over?","Có 23 cây bút chì xếp vào các hộp, mỗi hộp 4 cây. Có bao nhiêu hộp và còn thừa bao nhiêu cây bút chì?","23 : 4 = 5 (dư 3)","Twenty-three divided by four is five, remainder three. So there are five boxes and three pencils are left over.","23 chia 4 được 5, dư 3. Vậy có 5 hộp và còn thừa 3 cây bút chì."]]],
 [3,["Gấp lên nhiều lần","Times as many"],["nhân","multiply"],
  "[Name A] has [number] [things]. [Name B] has [number] times as many [things]. How many [things] does [Name B] have?",
  "[Tên A] có [số] [vật]. [Tên B] có gấp [số] lần số [vật] đó. [Tên B] có bao nhiêu [vật]?",
@@ -1342,7 +1397,7 @@ const WP_DATA=[
  "[Tên] được [số], [số] và [số] điểm trong ba bài kiểm tra. Điểm trung bình của [bạn ấy] là bao nhiêu?",
  "[number] plus [number] plus [number] equals [number]. [number] divided by three equals [number]. So the average is [number].",
  "[số] cộng [số] cộng [số] bằng [số]. [số] chia ba bằng [số]. Vậy điểm trung bình là [số].",
- [["Minh scores 7, 8 and 9 in three tests. What is his average score?","Minh được 7, 8 và 9 điểm trong ba bài kiểm tra. Điểm trung bình của Minh là bao nhiêu?","(7 + 8 + 9) ÷ 3 = 8","Seven plus eight plus nine equals twenty-four. Twenty-four divided by three equals eight. So his average score is eight.","7 cộng 8 cộng 9 bằng 24. 24 chia 3 bằng 8. Vậy điểm trung bình của Minh là 8."]]],
+ [["Minh scores 7, 8 and 9 in three tests. What is his average score?","Minh được 7, 8 và 9 điểm trong ba bài kiểm tra. Điểm trung bình của Minh là bao nhiêu?","(7 + 8 + 9) : 3 = 8","Seven plus eight plus nine equals twenty-four. Twenty-four divided by three equals eight. So his average score is eight.","7 cộng 8 cộng 9 bằng 24. 24 chia 3 bằng 8. Vậy điểm trung bình của Minh là 8."]]],
 [5,["Phần trăm của một số","Percent of a number"],["nhân","multiply"],
  "A class has [number] students. [number] percent of them are [group]. How many students are [group]?",
  "Một lớp có [số] học sinh. [Số] phần trăm trong số đó là [nhóm]. Có bao nhiêu học sinh là [nhóm]?",
@@ -1354,7 +1409,7 @@ const WP_DATA=[
  "Một [phương tiện] đi được [số] ki-lô-mét trong [số] giờ. Vận tốc của nó là bao nhiêu?",
  "[number] divided by [number] equals [number]. So its speed is [number] kilometres per hour.",
  "[số] chia [số] bằng [số]. Vậy vận tốc là [số] ki-lô-mét trên giờ.",
- [["A car travels 120 kilometres in 2 hours. What is its speed?","Một ô tô đi được 120 ki-lô-mét trong 2 giờ. Vận tốc của ô tô là bao nhiêu?","120 ÷ 2 = 60 km/h","One hundred and twenty divided by two equals sixty. So its speed is sixty kilometres per hour.","120 chia 2 bằng 60. Vậy vận tốc là 60 ki-lô-mét trên giờ."]]]
+ [["A car travels 120 kilometres in 2 hours. What is its speed?","Một ô tô đi được 120 ki-lô-mét trong 2 giờ. Vận tốc của ô tô là bao nhiêu?","120 : 2 = 60 km/h","One hundred and twenty divided by two equals sixty. So its speed is sixty kilometres per hour.","120 chia 2 bằng 60. Vậy vận tốc là 60 ki-lô-mét trên giờ."]]]
 ];
 const WP_STEPS=[
  ["Let's read the problem carefully.","Ta đọc kỹ đề bài.","The problem is about ___."],
@@ -1395,24 +1450,511 @@ function wpView(){
   return wpSteps()+'<p class="count num">'+list.length+' '+T("dạng bài","problem types")+'</p><div class="list">'+list.map(w=>wpCard(w.id)).join("")+'</div>';
 }
 
+/* ================= HÌNH MINH HỌA (SVG tự vẽ) ================= */
+const ILL={};
+const ilP=(cx,cy,r,deg)=>{const a=deg*Math.PI/180;return [Math.round((cx+r*Math.cos(a))*10)/10,Math.round((cy-r*Math.sin(a))*10)/10];};
+const ilSvg=(inner,label,w)=>'<svg viewBox="0 0 '+(w||120)+' 80" role="img" aria-label="'+label+'" xmlns="http://www.w3.org/2000/svg">'+inner+'</svg>';
+const ilTx=(t,x,y)=>'<text x="'+x+'" y="'+y+'">'+t+'</text>';
+const ilPoly=(pts,cls)=>'<polygon points="'+pts.map(p=>p.join(",")).join(" ")+'"'+(cls?' class="'+cls+'"':'')+'/>';
+const ilL=(x1,y1,x2,y2,cls)=>'<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'"'+(cls?' class="'+cls+'"':'')+'/>';
+const ilDot=(x,y,cls)=>'<circle cx="'+x+'" cy="'+y+'" r="3.6" class="'+(cls||"dot")+'"/>';
+const ilMark=(x,y,sx,sy)=>'<polyline points="'+x+","+(y+sy*9)+" "+(x+sx*9)+","+(y+sy*9)+" "+(x+sx*9)+","+y+'" class="thin"/>';
+/* hình tròn chia phần: xoay theo chiều kim đồng hồ từ 12 giờ */
+function ilSector(cx,cy,r,a0,a1){const p=a=>[Math.round((cx+r*Math.sin(a*Math.PI/180))*10)/10,Math.round((cy-r*Math.cos(a*Math.PI/180))*10)/10];const s=p(a0),e=p(a1);return '<path d="M'+cx+","+cy+" L"+s.join(",")+" A"+r+","+r+" 0 "+((a1-a0)>180?1:0)+" 1 "+e.join(",")+' Z" class="h"/>';}
+function ilPie(n,k,cx,cy,r){
+  let o="";
+  if(k>=n&&n>=1)o+='<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" class="h"/>';
+  else{o+='<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" class="w"/>';if(k>0)o+=ilSector(cx,cy,r,0,360*k/n);}
+  o+='<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'"/>';
+  if(n>1)for(let i=0;i<n;i++){const a=360*i/n*Math.PI/180;o+=ilL(cx,cy,Math.round((cx+r*Math.sin(a))*10)/10,Math.round((cy-r*Math.cos(a))*10)/10,"thin");}
+  return o;
+}
+function ilBar(n,k,x,y,w,h){let o="";for(let i=0;i<n;i++)o+='<rect x="'+(x+w*i/n)+'" y="'+y+'" width="'+(w/n)+'" height="'+h+'" class="'+(i<k?"h":"w")+'"/>';return o;}
+const ilFrac=(n,k,lab)=>ilPie(n,k,32,38,26)+ilBar(n,k,66,26,50,22)+(lab===false?"":ilTx(lab||(k+"/"+n),91,68));
+/* góc */
+function ilAng(deg,vx,vy,l1,l2,r,lab,showLab){
+  const v=[vx,vy],p0=ilP(vx,vy,r,0),p1=ilP(vx,vy,r,deg),e=ilP(vx,vy,l2,deg),big=deg>180?1:0;
+  let o='<path d="M'+vx+","+vy+" L"+p0.join(",")+" A"+r+","+r+" 0 "+big+" 0 "+p1.join(",")+' Z" class="h"/>';
+  o+=ilL(vx,vy,vx+l1,vy)+ilL(vx,vy,e[0],e[1]);
+  if(deg===90)o+='<polyline points="'+vx+","+(vy-9)+" "+(vx+9)+","+(vy-9)+" "+(vx+9)+","+vy+'" class="thin"/>';
+  o+=ilDot(vx,vy);
+  if(showLab!==false){const t=ilP(vx,vy,r+(deg<60?24:13),deg<60?20:deg/2);o+=ilTx(lab,t[0],t[1]+3);}
+  return o;
+}
+ILL["circle"]=()=>'<circle cx="60" cy="40" r="30" class="s"/>';
+ILL["triangle"]=()=>ilPoly([[60,10],[102,68],[18,68]],"s");
+ILL["square"]=()=>'<rect x="35" y="14" width="50" height="50" class="s"/>';
+ILL["rectangle"]=()=>'<rect x="16" y="20" width="88" height="44" class="s"/>';
+ILL["side"]=()=>'<rect x="16" y="20" width="88" height="44" class="s"/>'+ilL(16,64,104,64,"a")+ilL(104,20,104,64,"thin");
+ILL["side length"]=ILL["side"];
+ILL["vertex"]=()=>ilPoly([[60,12],[102,68],[18,68]],"s")+ilDot(60,12,"dotH");
+ILL["corner"]=()=>'<rect x="16" y="20" width="88" height="44" class="s"/>'+ilDot(16,64,"dotH");
+ILL["angle"]=()=>ilAng(50,26,64,76,70,18,"θ");
+ILL["right angle"]=()=>ilAng(90,30,64,72,56,16,"90°");
+ILL["acute angle"]=()=>ilAng(45,22,64,84,76,18,"<90°");
+ILL["obtuse angle"]=()=>ilAng(130,60,64,50,46,16,">90°");
+ILL["straight angle"]=()=>ilAng(180,60,64,50,50,16,"180°");
+ILL["point"]=()=>ilDot(60,42,"dotH")+ilTx("A",72,36);
+ILL["line segment"]=()=>ilL(14,40,106,40)+ilDot(14,40)+ilDot(106,40)+ilTx("A",14,60)+ilTx("B",106,60);
+ILL["straight line"]=()=>ilL(10,40,110,40)+'<polyline points="20,33 10,40 20,47"/><polyline points="100,33 110,40 100,47"/>';
+ILL["curved line"]=()=>'<path d="M14,58 C38,2 82,78 106,22"/>';
+ILL["broken line"]=()=>'<polyline points="12,60 38,20 64,56 90,18 108,36"/>'+ilDot(12,60)+ilDot(108,36);
+ILL["parallel"]=()=>ilL(12,28,108,28)+ilL(12,54,108,54)+'<polyline points="58,22 65,28 58,34" class="thin"/><polyline points="58,48 65,54 58,60" class="thin"/>'+ilTx("a",116,31)+ilTx("b",116,57);
+ILL["perpendicular"]=()=>ilL(12,56,108,56)+ilL(60,10,60,70)+ilMark(60,56,1,-1);
+ILL["midpoint"]=()=>ilL(14,40,106,40)+ilL(37,33,37,47,"thin")+ilL(83,33,83,47,"thin")+ilDot(14,40)+ilDot(106,40)+ilDot(60,40,"dotH")+ilTx("A",14,62)+ilTx("M",60,62)+ilTx("B",106,62);
+ILL["centre"]=()=>'<circle cx="60" cy="40" r="30" class="s"/>'+ilDot(60,40,"dotH");
+ILL["radius"]=()=>'<circle cx="60" cy="40" r="30" class="s"/>'+ilL(60,40,90,40,"a")+ilDot(60,40)+ilTx("r",75,34);
+ILL["diameter"]=()=>'<circle cx="60" cy="40" r="30" class="s"/>'+ilL(30,40,90,40,"a")+ilDot(60,40)+ilTx("d",60,32);
+ILL["circumference"]=()=>'<circle cx="60" cy="40" r="30" class="s"/><circle cx="60" cy="40" r="30" class="a"/>';
+ILL["quadrilateral"]=()=>ilPoly([[24,18],[100,26],[92,64],[14,56]],"s");
+ILL["rhombus"]=()=>ilPoly([[60,10],[102,40],[60,70],[18,40]],"s");
+ILL["parallelogram"]=()=>ilPoly([[48,20],[108,20],[84,62],[24,62]],"s");
+ILL["trapezium"]=()=>ilPoly([[42,20],[80,20],[106,62],[14,62]],"s")+'<polyline points="56,15 63,20 56,25" class="thin"/><polyline points="56,57 63,62 56,67" class="thin"/>';
+function ilBox(x,y,w,h,dx,dy,hl){
+  const front=[[x,y],[x+w,y],[x+w,y+h],[x,y+h]],top=[[x,y],[x+dx,y-dy],[x+w+dx,y-dy],[x+w,y]],right=[[x+w,y],[x+w+dx,y-dy],[x+w+dx,y+h-dy],[x+w,y+h]];
+  return ilPoly(top,"w")+ilPoly(right,"s")+ilPoly(front,hl==="face"?"h":"s")+(hl==="edge"?ilL(x,y,x+w,y,"a"):"");
+}
+ILL["cube"]=()=>ilBox(22,30,40,40,22,18);
+ILL["cuboid"]=()=>ilBox(14,32,58,34,28,20);
+ILL["face"]=()=>ilBox(22,30,40,40,22,18,"face");
+ILL["edge"]=()=>ilBox(22,30,40,40,22,18,"edge");
+ILL["cylinder"]=()=>'<path d="M34,20 V58 A26,8 0 0 0 86,58 V20" class="s"/><ellipse cx="60" cy="20" rx="26" ry="8" class="w"/>';
+ILL["sphere"]=()=>'<circle cx="60" cy="40" r="30" class="s"/><ellipse cx="60" cy="40" rx="30" ry="9" class="thin d"/>';
+ILL["net"]=()=>{let o="";[[39,13],[21,31],[39,31],[57,31],[75,31],[39,49]].forEach(p=>{o+='<rect x="'+p[0]+'" y="'+p[1]+'" width="18" height="18" class="s"/>';});return o;};
+ILL["equilateral triangle"]=()=>ilPoly([[60,8],[98,72],[22,72]],"s")+ilL(36.7,40,45.3,45.2,"thin")+ilL(74.7,45.2,83.3,40,"thin")+ilL(60,67,60,77,"thin");
+ILL["right-angled triangle"]=()=>ilPoly([[26,68],[98,68],[26,14]],"s")+ilMark(26,68,1,-1);
+ILL["acute triangle"]=()=>ilPoly([[60,10],[100,68],[20,68]],"s");
+ILL["obtuse triangle"]=()=>ilPoly([[10,66],[104,66],[30,46]],"s");
+ILL["perimeter"]=()=>'<rect x="18" y="18" width="84" height="44" class="w"/><rect x="18" y="18" width="84" height="44" class="a"/>';
+ILL["area"]=()=>{let o='<rect x="20" y="16" width="80" height="48" class="h"/>';for(let i=1;i<4;i++)o+=ilL(20+i*20,16,20+i*20,64,"thin");for(let j=1;j<3;j++)o+=ilL(20,16+j*16,100,16+j*16,"thin");return o;};
+const ilDims=(hlL)=>'<rect x="14" y="12" width="76" height="36" class="s"/>'+ilL(14,60,90,60,hlL?"a":"thin")+ilL(14,56,14,64,"thin")+ilL(90,56,90,64,"thin")+ilL(102,12,102,48,hlL?"thin":"a")+ilL(98,12,106,12,"thin")+ilL(98,48,106,48,"thin")+ilTx("l",52,76)+ilTx("w",113,34);
+ILL["length"]=()=>ilDims(true);
+ILL["width"]=()=>ilDims(false);
+ILL["height"]=()=>ilPoly([[14,66],[106,66],[52,12]],"s")+ilL(52,12,52,66,"a d")+ilMark(52,66,1,-1)+ilTx("h",43,42);
+ILL["base"]=()=>ilPoly([[14,66],[106,66],[52,12]],"s")+ilL(14,66,106,66,"a");
+ILL["protractor"]=()=>{let o='<path d="M10,66 A50,50 0 0 1 110,66 Z" class="s"/>';for(let d=0;d<=180;d+=15){const a=ilP(60,66,50,d),b=ilP(60,66,d%45===0?40:45,d);o+=ilL(a[0],a[1],b[0],b[1],"thin");}return o+ilDot(60,66);};
+ILL["ruler"]=()=>{let o='<rect x="8" y="26" width="104" height="28" class="s"/>';for(let i=0;i<=12;i++)o+=ilL(14+i*8,26,14+i*8,i%2?32:38,"thin");return o;};
+/* phân số */
+ILL["half"]=()=>ilFrac(2,1);ILL["quarter"]=()=>ilFrac(4,1);ILL["third"]=()=>ilFrac(3,1);ILL["fifth"]=()=>ilFrac(5,1);ILL["eighth"]=()=>ilFrac(8,1);ILL["tenth"]=()=>ilFrac(10,1);
+ILL["hundredth"]=()=>{let o="";for(let i=0;i<10;i++)for(let j=0;j<10;j++)o+='<rect x="'+(30+i*6)+'" y="'+(10+j*6)+'" width="6" height="6" class="'+(i===0&&j===0?"h":"w")+' thin"/>';return o+ilTx("1/100",60,78);};
+ILL["equal parts"]=()=>ilFrac(4,0,false);
+ILL["whole"]=()=>ilFrac(1,1,"1");
+ILL["part"]=()=>ilFrac(6,2);
+ILL["unit fraction"]=()=>ilFrac(3,1);
+ILL["fraction"]=()=>ilFrac(4,3);
+const ilBig=(a,b,hl)=>'<rect x="'+(hl==="n"?14:14)+'" y="'+(hl==="n"?10:46)+'" width="28" height="22" rx="5" class="h"/>'+ilTx(a,28,27)+ilL(14,38,42,38,"")+ilTx(b,28,58);
+ILL["numerator"]=()=>'<rect x="12" y="8" width="32" height="24" rx="5" class="h"/><text x="28" y="26" class="big">3</text>'+ilL(12,38,44,38)+'<text x="28" y="62" class="big">4</text>'+ilPie(4,3,84,38,24);
+ILL["denominator"]=()=>'<text x="28" y="26" class="big">3</text>'+ilL(12,38,44,38)+'<rect x="12" y="44" width="32" height="24" rx="5" class="h"/><text x="28" y="62" class="big">4</text>'+ilPie(4,3,84,38,24);
+ILL["mixed number"]=()=>ilPie(1,1,30,34,22)+ilPie(4,3,80,34,22)+ilTx("1 3/4",60,76);
+ILL["equivalent fractions"]=()=>ilBar(2,1,10,14,70,18)+ilBar(4,2,10,42,70,18)+ilTx("1/2",100,28)+ilTx("=",100,46)+ilTx("2/4",100,62);
+const ilFor=en=>{const f=ILL[String(en).toLowerCase()];return f?'<figure class="ill il">'+ilSvg(f(),esc(en))+'</figure>':"";};
+/* hình cho nhóm "Các loại góc" */
+function ilAngGroup(showLab){
+  const cell=[[90,10,50,"90°","right"],[45,70,44,"<90°","acute"],[130,150,34,">90°","obtuse"],[180,210,28,"180°","straight"]];
+  let o="";
+  [[90,14,52,40,34,12,"90°","right"],[45,76,52,38,36,12,"<90°","acute"],[130,152,52,30,30,12,">90°","obtuse"],[180,212,52,0,26,12,"180°","straight"]].forEach(c=>{
+    o+=ilAng(c[0],c[1],c[2],c[3],c[4],c[5],c[6],showLab);
+    if(showLab)o+=ilTx(c[7],c[1]+(c[0]===180?0:14),76);
+  });
+  return '<figure class="ill il wide">'+ilSvg(o,"angles",240)+'</figure>';
+}
+
+/* ================= NHÌN HÌNH: luyện tập và trò chơi bằng hình ================= */
+/* Từ có hình nhưng dễ gây nhầm khi chọn giữa nhiều hình: chỉ dùng ở chế độ "Nhìn hình nói" */
+const PIC_SKIP=new Set(["angle","triangle","side","side length","corner","vertex","length","width","height","base","part","fraction","unit fraction","equal parts","area","perimeter","quadrilateral","midpoint"]);
+/* Các nhóm hình na ná nhau: một câu hỏi chỉ dùng tối đa một hình trong mỗi nhóm */
+const PIC_EXC=[["circle","centre","radius","diameter","circumference"],["equilateral triangle","right-angled triangle","acute triangle","obtuse triangle"],["square","rectangle","rhombus","parallelogram","trapezium"],["cube","cuboid","face","edge","net"],["numerator","denominator"],["above","below","left","right","in front of","behind","between"],["greater than","less than","equal to"],["ones","tens","hundreds","place value"]];
+const picGrp=en=>{const k=String(en).toLowerCase();for(let i=0;i<PIC_EXC.length;i++)if(PIC_EXC[i].indexOf(k)>=0)return i;return -1;};
+function picPool(forQ){
+  const seen={},out=[];
+  allTerms().forEach(t=>{
+    const k=String(t.en).toLowerCase(),f=ILL[k];if(!f)return;
+    if(!(S.grade===0||t.g===0||t.g<=S.grade))return;
+    if(forQ&&PIC_SKIP.has(k))return;
+    const sv=f();if(seen[sv])return;seen[sv]=1;out.push(t);
+  });
+  return out;
+}
+function picOptions(t,list){
+  const used=[picGrp(t.en)].filter(x=>x>=0);
+  const cand=shuffle(list.filter(x=>x.id!==t.id));
+  const order=cand.filter(x=>x.topic===t.topic).concat(cand.filter(x=>x.topic!==t.topic));
+  const ds=[];
+  for(const x of order){const g=picGrp(x.en);if(g>=0&&used.indexOf(g)>=0)continue;if(g>=0)used.push(g);ds.push(x);if(ds.length===3)break;}
+  if(ds.length<3)return null;
+  const opts=shuffle([t].concat(ds));
+  return {opts:opts,idx:opts.findIndex(o=>o.id===t.id)};
+}
+function newPic(){
+  const P=S.pic,pool=picPool(P.sub!=="say");
+  if(!pool.length||(P.sub!=="say"&&pool.length<4)){P.cur={empty:true};return;}
+  let t,tries=0;do{t=pick(pool);tries++;}while(pool.length>1&&P.last===t.id&&tries<20);
+  P.last=t.id;
+  const o=P.sub==="say"?null:picOptions(t,pool);
+  if(P.sub!=="say"&&!o){P.cur={empty:true};return;}
+  P.cur={t:t,o:o,picked:null,rev:false};
+}
+function picHTML(){
+  const P=S.pic,L=S.level;
+  const subs='<div class="chips">'+[["say",T("Nhìn hình nói","See and say")],["choose",T("Chọn hình","Pick the picture")],["name",T("Gọi tên hình","Name the picture")]].map(x=>chip("psub",x[0],x[1],P.sub===x[0])).join("")+'</div>';
+  const intro='<p class="sub">'+(P.sub==="say"?T("Nhìn hình rồi nói từ tiếng Anh. Mức 1 hiện sẵn đáp án, mức 3 chỉ có hình.","Look at the picture and say the English word. Level 1 shows the answer, level 3 only the picture."):P.sub==="choose"?T("Nghe hoặc đọc từ tiếng Anh, rồi chạm vào hình đúng.","Hear or read the English word, then tap the right picture."):T("Nhìn hình rồi chọn từ tiếng Anh đúng.","Look at the picture and pick the right English word."))+'</p>';
+  if(!picPool(false).length)return subs+'<div class="card empty">'+T("Chưa có hình cho phạm vi lớp này. Thử chọn “Tất cả” ở thanh lớp.","No pictures for this grade yet. Try “All” in the grade bar.")+'</div>';
+  if(!P.cur)newPic();
+  const c=P.cur;
+  if(c.empty)return subs+intro+'<div class="card empty">'+T("Chưa đủ hình để tạo câu hỏi cho phạm vi này. Chọn “Tất cả” ở thanh lớp, hoặc dùng “Nhìn hình nói”.","Not enough pictures for questions in this scope. Pick “All” in the grade bar, or use “See and say”.")+'</div>';
+  const t=c.t;
+  const pres='<button class="btn mini" data-a="ppres" style="align-self:flex-start">'+ic("image")+' '+T("Chiếu hình cho cả lớp","Show pictures to the class")+'</button>';
+  if(P.sub==="say"){
+    const full=L===1||c.rev;
+    return subs+intro+'<div class="card prompt pic">'+ilFor(t.en)
+     +(full?'<span class="big">'+esc(t.en)+'</span><span class="ipa">'+esc(t.ipa)+'</span><span class="vi">'+esc(t.vi)+'</span>'+sayBtn(t.en)+(t.note?'<span class="hint">'+T("Anh – Mỹ: ","UK – US: ")+esc(t.note)+'</span>':''):(L===2?'<span class="hint">'+T("Nói: “This is ___.”","Say: “This is ___.”")+'</span>':'<span class="hint">'+T("Nhìn hình và nói từ tiếng Anh","Look and say the English word")+'</span>'))
+     +'</div><div class="btns">'+(L>1?'<button class="btn" data-a="prv">'+(c.rev?T("Ẩn đáp án","Hide answer"):T("Xem đáp án","Show answer"))+'</button>':'')+'<button class="btn pri" data-a="pnext">'+T("Hình tiếp","Next")+ic("right")+'</button></div>'+pres;
+  }
+  const right=c.picked!==null&&c.picked===c.o.idx;
+  let prompt,opts;
+  if(P.sub==="choose"){
+    prompt=(L===3?'<span class="sub">'+T("Nghe từ rồi chọn hình đúng","Listen, then pick the right picture")+'</span><button class="btn pri" data-a="say" data-t="'+esc(t.en)+'">'+ic("speaker")+' '+T("Nghe từ","Play word")+'</button>'
+      :'<span class="sub">'+T("Hình nào là:","Which picture shows:")+'</span><span class="big">'+esc(t.en)+'</span>'+(L===1?'<span class="vi">'+esc(t.vi)+'</span>':'')+sayBtn(t.en));
+    opts='<div class="opts pics">'+c.o.opts.map((o,i)=>{let k="opt pic";if(c.picked!==null){if(i===c.o.idx)k+=" right";else if(i===c.picked)k+=" wrong";}return '<button class="'+k+'" data-a="ppick" data-v="'+i+'"'+(c.picked!==null?" disabled":"")+'>'+ilFor(o.en)+'</button>';}).join("")+'</div>';
+  }else{
+    prompt='<span class="sub">'+T("Đây là gì?","What is this?")+'</span>'+ilFor(t.en);
+    opts='<div class="opts">'+c.o.opts.map((o,i)=>{let k="opt";if(c.picked!==null){if(i===c.o.idx)k+=" right";else if(i===c.picked)k+=" wrong";}return '<button class="'+k+'" data-a="ppick" data-v="'+i+'"'+(c.picked!==null?" disabled":"")+'>'+esc(o.en)+(L===1?'<small class="osub">'+esc(o.vi)+'</small>':'')+'</button>';}).join("")+'</div>';
+  }
+  return subs+intro+'<div class="stats num"><span>'+T("Điểm","Score")+' <b>'+P.score+'/'+P.n+'</b></span></div><div class="card prompt">'+prompt+'</div>'+opts
+   +(c.picked!==null?'<p class="feedback '+(right?"ok":"no")+'">'+(right?T("Chính xác!","Correct!"):T("Chưa đúng. Đáp án: ","Not quite. Answer: ")+esc(t.en)+" – "+esc(t.vi))+'</p><div class="btns"><button class="btn" data-a="say" data-t="'+esc(t.en)+'">'+ic("speaker")+' '+T("Nghe","Listen")+'</button><button class="btn pri" data-a="pnext">'+T("Câu tiếp","Next")+ic("right")+'</button></div>':'')+pres;
+}
+function picQ(i,L,force){
+  const qp=picPool(true),t=pick(qp),o=picOptions(t,qp);
+  if(!o)return null;
+  const p2w=force!==undefined?force:((L===3)?(i%3===2):(i%2===0));
+  if(p2w)return {kind:"p",pic:ilFor(t.en),hint:T("Đây là gì?","What is this?"),opts:o.opts.map(x=>x.en),idx:o.idx,say:t.en,ans:t.en};
+  const aud=L===3&&hasTTS();
+  return {kind:"p",prompt:aud?"":t.en,cls:"big",hint:aud?T("Nghe và chọn hình đúng","Listen and pick the picture"):T("Chọn hình đúng","Pick the right picture"),opts:o.opts.map(x=>ilFor(x.en)),optPic:true,idx:o.idx,say:t.en,ans:t.en,audio:aud};
+}
+
+/* ================= HÌNH MINH HỌA LƯỢT 2: thời gian, đo lường, vị trí, số, thống kê ================= */
+const ilC=(x,y,r,cls)=>'<circle cx="'+x+'" cy="'+y+'" r="'+r+'"'+(cls?' class="'+cls+'"':'')+'/>';
+const ilR=(x,y,w,h,cls,rx)=>'<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'"'+(rx?' rx="'+rx+'"':'')+(cls?' class="'+cls+'"':'')+'/>';
+const ilDots=(n,x,y,cols,gap,r,cls)=>{let o="";for(let i=0;i<n;i++)o+=ilC(x+(i%cols)*gap,y+Math.floor(i/cols)*gap,r,cls||"h");return o;};
+const ilSect=(cx,cy,r,a0,a1,cls)=>{const p=a=>[Math.round((cx+r*Math.sin(a*Math.PI/180))*10)/10,Math.round((cy-r*Math.cos(a*Math.PI/180))*10)/10];const s=p(a0),e=p(a1);return '<path d="M'+cx+","+cy+" L"+s.join(",")+" A"+r+","+r+" 0 "+((a1-a0)>180?1:0)+" 1 "+e.join(",")+' Z" class="'+cls+'"/>';};
+const ilBoxRef=(x,y)=>ilR(x,y,30,24,"s");
+ILL["above"]=()=>ilBoxRef(45,44)+ilC(60,28,9,"h")+ilL(60,42,60,44,"thin");
+ILL["below"]=()=>ilBoxRef(45,12)+ilC(60,58,9,"h");
+ILL["left"]=()=>ilBoxRef(60,28)+ilC(34,40,9,"h")+'<polyline points="48,40 40,40" class="thin"/>';
+ILL["right"]=()=>ilBoxRef(30,28)+ilC(86,40,9,"h");
+ILL["in front of"]=()=>ilR(40,18,44,34,"s")+ilC(54,50,12,"h");
+ILL["behind"]=()=>ilC(66,30,12,"h")+ilR(36,28,44,34,"s");
+ILL["between"]=()=>ilBoxRef(10,28)+ilC(60,40,9,"h")+ilBoxRef(80,28);
+ILL["ones"]=()=>{let o="";for(let i=0;i<3;i++)o+=ilR(26+i*24,32,18,18,"h");return o+ilTx("3 ones",60,70);};
+ILL["tens"]=()=>{let o="";for(let i=0;i<2;i++){o+=ilR(40+i*24,10,14,52,"s");for(let k=1;k<10;k++)o+=ilL(40+i*24,10+k*5.2,54+i*24,10+k*5.2,"thin");}return o+ilTx("2 tens",60,76);};
+ILL["hundreds"]=()=>{let o=ilR(34,8,52,52,"s");for(let k=1;k<10;k++)o+=ilL(34+k*5.2,8,34+k*5.2,60,"thin")+ilL(34,8+k*5.2,86,8+k*5.2,"thin");return o+ilTx("100",60,74);};
+ILL["place value"]=()=>{let o="";["H","T","O"].forEach((c,i)=>{o+=ilR(18+i*30,14,28,18,"s")+ilTx(c,32+i*30,27)+ilR(18+i*30,32,28,28,"w")+'<text x="'+(32+i*30)+'" y="54" class="big">'+[2,4,5][i]+'</text>';});return o;};
+ILL["greater than"]=()=>ilDots(5,10,30,3,10,3.8,"h")+'<text x="60" y="48" class="big">&gt;</text>'+ilDots(3,80,36,3,10,3.8,"h");
+ILL["less than"]=()=>ilDots(3,10,36,3,10,3.8,"h")+'<text x="60" y="48" class="big">&lt;</text>'+ilDots(5,80,30,3,10,3.8,"h");
+ILL["equal to"]=()=>ilDots(4,10,36,2,10,3.8,"h")+'<text x="60" y="48" class="big">=</text>'+ilDots(4,86,36,2,10,3.8,"h");
+
 /* ================= TRA CỨU ================= */
+/* ================= ĐỌC SỐ: lõi chuyển số sang chữ Anh ================= */
+const N1=["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"];
+const N10=["","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];
+const NSC=["","thousand","million","billion","trillion"];
+const NORD={2:"half",3:"third",4:"quarter",5:"fifth",6:"sixth",7:"seventh",8:"eighth",9:"ninth",10:"tenth",100:"hundredth",1000:"thousandth"};
+function w100(n){if(n<20)return N1[n];const t=Math.floor(n/10),o=n%10;return N10[t]+(o?"-"+N1[o]:"");}
+function w1000(n,uk){const h=Math.floor(n/100),r=n%100;if(!h)return w100(r);let s=N1[h]+" hundred";if(r)s+=(uk?" and ":" ")+w100(r);return s;}
+function intWords(str,uk){
+  str=String(str).replace(/^0+(?=\d)/,"");
+  if(str==="0")return "zero";
+  if(str.length>15)return null;
+  const gs=[];for(let i=str.length;i>0;i-=3)gs.unshift(+str.slice(Math.max(0,i-3),i));
+  const parts=[];
+  gs.forEach((g,i)=>{if(!g)return;const sc=NSC[gs.length-1-i];parts.push({g:g,t:w1000(g,uk)+(sc?" "+sc:"")});});
+  let out="";
+  parts.forEach((p,i)=>{
+    if(i===0){out=p.t;return;}
+    const last=i===parts.length-1;
+    if(last&&p.g<100)out+=(uk?" and ":" ")+p.t;else out+=", "+p.t;
+  });
+  return out;
+}
+function ordW(n){
+  const OR=["","first","second","third","fourth","fifth","sixth","seventh","eighth","ninth","tenth"];
+  const sp={11:"eleventh",12:"twelfth",13:"thirteenth",14:"fourteenth",15:"fifteenth",16:"sixteenth",17:"seventeenth",18:"eighteenth",19:"nineteenth"};
+  const tw=["","","twentieth","thirtieth","fortieth","fiftieth","sixtieth","seventieth","eightieth","ninetieth"];
+  if(n<=10)return OR[n];if(sp[n])return sp[n];
+  const t=Math.floor(n/10),o=n%10;return o?N10[t]+"-"+OR[o]:tw[t];
+}
+function decW(s,uk){
+  const p=s.split(".");const ip=intWords(p[0],uk);if(!ip)return null;
+  return ip+" point "+p[1].split("").map(c=>N1[+c]).join(" ");
+}
+function fracWords(n,d,uk){
+  const nn=+n,dd=+d;
+  if(dd===0)return {err:"Mẫu số không được bằng 0."};
+  const nw=intWords(n,uk),dw=intWords(d,uk);
+  if(!nw||!dw)return {err:"Số quá lớn (tối đa 15 chữ số)."};
+  const pl=nn===1?"":"s";let en,why,alts=[];
+  if(dd===2){en=nw+(nn===1?" half":" halves");why="Mẫu số 2 đọc là half (số nhiều: halves).";if(nn===1)alts.push({en:"a half",why:"Cũng thường nói a half."});}
+  else if(dd===4){en=nw+(nn===1?" quarter":" quarters");why="Mẫu số 4 thường đọc là quarter (số nhiều: quarters).";alts.push({en:nw+(nn===1?" fourth":" fourths"),why:"Đọc theo quy tắc chung, phổ biến ở Mỹ."});}
+  else if(dd>2&&NORD[dd]){en=nw+" "+NORD[dd]+pl;why="Tử số đọc như số đếm, mẫu số đọc như số thứ tự"+(nn===1?".":", thêm s vì tử số lớn hơn 1.");}
+  else{en=nw+" over "+dw;why="Mẫu số khó đọc: dùng over cho dễ nói (a over b).";if(dd>10&&dd<100)alts.push({en:nw+" "+ordW(dd)+pl,why:"Cách đọc đầy đủ theo số thứ tự."});}
+  return {en:en,why:why,alts:alts};
+}
+function plainNum(b,uk){
+  b=b.trim();
+  if(/^\d+$/.test(b)||/^\d{1,3}(\s\d{3})+$/.test(b)){
+    const w=intWords(b.replace(/\s/g,""),uk);
+    return w?{en:w,why:"Số nguyên: tách từng nhóm 3 chữ số từ phải sang trái, đọc mỗi nhóm rồi thêm thousand, million…"}:{err:"Số quá lớn (tối đa 15 chữ số)."};
+  }
+  if(/^\d{1,3}(,\d{3})+$/.test(b)){
+    const int=b.replace(/,/g,"");
+    const r={en:intWords(int,uk),why:"Dấu phẩy trong số tiếng Anh ngăn cách các nhóm 3 chữ số: "+b+" = "+int+"."};
+    if(/^\d{1,3},\d{3}$/.test(b)){const dot=b.replace(",",".");r.alts=[{en:decW(dot,uk),why:"Nếu viết kiểu Việt Nam thì "+b+" là số thập phân "+dot+", đọc là:"}];}
+    return r;
+  }
+  if(/^\d{1,3}(\.\d{3})+$/.test(b)){
+    const int=b.replace(/\./g,"");
+    const r={en:intWords(int,uk),why:"Kiểu Việt Nam: dấu chấm ngăn cách hàng nghìn ("+b+" = "+int+")."};
+    r.notes=["Tiếng Anh viết số này là "+int.replace(/\B(?=(\d{3})+(?!\d))/g,",")+" (dấu phẩy ngăn cách hàng nghìn)."];
+    if(/^\d{1,3}\.\d{3}$/.test(b))r.alts=[{en:decW(b,uk),why:"Nếu đây là số thập phân kiểu Anh thì "+b+" đọc là:"}];
+    return r;
+  }
+  if(/^\d+\.\d+$/.test(b)){const w=decW(b,uk);return w?{en:w,why:"Số thập phân: đọc phần nguyên, nói point, rồi đọc TỪNG chữ số một."}:{err:"Số quá lớn (tối đa 15 chữ số)."};}
+  if(/^\d+,\d+$/.test(b)){const dot=b.replace(",",".");const w=decW(dot,uk);return w?{en:w,why:"Việt Nam viết dấu phẩy, tiếng Anh viết dấu chấm: "+b+" → "+dot+". Đọc phần nguyên, nói point, rồi từng chữ số.",notes:["Tiếng Anh viết "+dot+" (dấu chấm), không viết "+b+"."]}:{err:"Số quá lớn (tối đa 15 chữ số)."};}
+  return {err:"Chưa nhận ra định dạng số. Thử: 3/4, 2 1/2, 3.14, 25%, 2:3, 12345."};
+}
+function readNum(raw,uk){
+  let s=String(raw).trim().replace(/−/g,"-");if(!s)return null;
+  let pre="";if(s[0]==="-"){pre="minus ";s=s.slice(1).trim();}
+  let m;
+  if(s.indexOf(":")>=0){
+    const ps=s.split(":").map(x=>x.trim());
+    const ws=ps.map(p=>{if(!(/^\d+$/.test(p)||/^\d+[.,]\d+$/.test(p)))return null;const r=plainNum(p,uk);return r.err?null:r.en;});
+    if(ps.length>=2&&ws.every(Boolean))return {en:pre+ws.join(" to "),why:"Tỉ số: đọc to ở giữa các số. Khác với phân số (2:3 đọc two to three, còn 2/3 đọc two thirds)."};
+    return {err:"Tỉ số cần dạng a:b, ví dụ 2:3."};
+  }
+  if(/%\s*$/.test(s)){
+    const r=plainNum(s.replace(/%\s*$/,""),uk);if(r.err)return r;
+    return {en:pre+r.en+" percent",why:"Phần trăm: đọc số rồi thêm percent (không thêm s).",alts:(r.alts||[]).map(a=>({en:a.en+" percent",why:a.why})),notes:r.notes};
+  }
+  if((m=s.match(/^(\d+)\s+(\d+)\s*\/\s*(\d+)$/))){
+    const f=fracWords(m[2],m[3],uk);if(f.err)return f;const w=intWords(m[1],uk);if(!w)return {err:"Số quá lớn (tối đa 15 chữ số)."};
+    return {en:pre+w+" and "+f.en,why:"Hỗn số: đọc phần nguyên, thêm and, rồi đọc phân số. "+f.why,alts:f.alts.map(a=>({en:w+" and "+a.en,why:a.why}))};
+  }
+  if((m=s.match(/^(\d+)\s*\/\s*(\d+)$/))){
+    const f=fracWords(m[1],m[2],uk);if(f.err)return f;
+    return {en:pre+f.en,why:f.why,alts:f.alts};
+  }
+  const r=plainNum(s,uk);if(r.err)return r;
+  return {en:pre+r.en,why:r.why,alts:r.alts,notes:r.notes};
+}
+
+/* ================= NHÓM TỪ LIÊN QUAN ================= */
+/* rows: [en, vi, cách dùng]; ex: [câu có [từ cần nhớ], vi]; bad: [sai, đúng, ghi chú]; eq: phép tính có nhãn; fr: [khung en, khung vi], fa: đáp án; alt: cách nói thông dụng */
+const GRPS=[
+{id:"g_add",sec:"op",tp:"so",g:1,t:["Phép cộng: add hay plus?","Addition: add or plus?"],en:"add · plus",
+ kw:"cộng add plus addition phép cộng sum tổng",
+ rows:[["plus","cộng (khi đọc phép tính)","Dùng để ĐỌC phép tính, đứng giữa hai số."],["add","cộng (động từ)","Dùng để ra lệnh hoặc nói việc đang làm."],["addition","phép cộng","Danh từ, là tên của phép tính."],["sum","tổng","Kết quả của phép cộng."]],
+ ex:[["Three [plus] four equals seven.","Ba cộng bốn bằng bảy."],["[Add] three and four.","Hãy cộng ba và bốn."],["First, [add] the ones. Then [add] the tens.","Trước hết cộng hàng đơn vị. Sau đó cộng hàng chục."],["The [sum] of three and four is seven.","Tổng của ba và bốn là bảy."]],
+ bad:[["Plus three and four.","Add three and four.","Plus không dùng làm động từ ra lệnh."],["Three add four equals seven.","Three plus four equals seven.","Khi đọc phép tính, dùng plus."]]},
+{id:"g_sub",sec:"op",tp:"so",g:1,t:["Phép trừ: minus hay subtract?","Subtraction: minus or subtract?"],en:"minus · subtract · take away",
+ kw:"trừ minus subtract take away subtraction phép trừ difference hiệu bớt",
+ rows:[["minus","trừ (khi đọc phép tính)","Dùng để ĐỌC phép tính, đứng giữa hai số."],["subtract","trừ (động từ)","Dùng để ra lệnh. Đi với from."],["take away","bớt đi","Cách nói đời thường, hợp với học sinh nhỏ."],["subtraction","phép trừ","Danh từ, là tên của phép tính."],["difference","hiệu","Kết quả của phép trừ."]],
+ ex:[["Nine [minus] three equals six.","Chín trừ ba bằng sáu."],["[Subtract] three [from] nine.","Hãy lấy chín trừ ba."],["[Take away] three from nine.","Bớt ba từ chín."],["The [difference] between nine and three is six.","Hiệu của chín và ba là sáu."]],
+ bad:[["Subtract nine from three. (muốn tính 9 − 3)","Subtract three from nine.","Subtract A from B nghĩa là B − A: số đứng sau from là số bị trừ."],["Nine subtract three equals six.","Nine minus three equals six.","Khi đọc phép tính, dùng minus."]]},
+{id:"g_mul",sec:"op",tp:"so",g:2,t:["Phép nhân: times hay multiply?","Multiplication: times or multiply?"],en:"times · multiply",
+ kw:"nhân times multiply multiplied multiplication phép nhân product tích bảng nhân",
+ rows:[["times","nhân (khi đọc phép tính)","Dùng để ĐỌC phép tính, đứng giữa hai số."],["multiplied by","nhân với","Cách đọc trang trọng hơn, cũng đứng giữa hai số."],["multiply","nhân (động từ)","Dùng để ra lệnh. Đi với by."],["multiplication","phép nhân","Danh từ, là tên của phép tính."],["product","tích","Kết quả của phép nhân."]],
+ ex:[["Three [times] four equals twelve.","Ba nhân bốn bằng mười hai."],["Three [multiplied by] four equals twelve.","Ba nhân với bốn bằng mười hai."],["[Multiply] three [by] four.","Hãy nhân ba với bốn."],["The [product] of three and four is twelve.","Tích của ba và bốn là mười hai."]],
+ bad:[["Three multiply four equals twelve.","Three times four equals twelve.","Multiply là động từ ra lệnh: Multiply three by four."],["Multiply three with four.","Multiply three by four.","Multiply đi với by, không đi với with."]]},
+{id:"g_div",sec:"op",tp:"so",g:2,t:["Phép chia: divided by hay divide?","Division: divided by or divide?"],en:"divided by · divide · share",
+ kw:"chia divided divide share equally division phép chia quotient thương remainder dư",
+ rows:[["divided by","chia cho (khi đọc phép tính)","Dùng để ĐỌC phép tính, đứng giữa hai số."],["divide","chia (động từ)","Dùng để ra lệnh. Đi với by."],["share equally","chia đều","Cách nói đời thường: share … equally between / among …"],["division","phép chia","Danh từ, là tên của phép tính."],["quotient","thương","Kết quả của phép chia."],["remainder","số dư","Phần còn lại khi chia không hết."]],
+ ex:[["Twelve [divided by] three equals four.","Mười hai chia cho ba bằng bốn."],["[Divide] twelve [by] three.","Hãy chia mười hai cho ba."],["[Share] twelve sweets [equally] between three children.","Chia đều mười hai cái kẹo cho ba bạn."],["Thirteen divided by three is four, [remainder] one.","Mười ba chia ba được bốn, dư một."]],
+ bad:[["Twelve divide three equals four.","Twelve divided by three equals four.","Khi đọc phép tính, dùng divided by."],["Divide twelve to three.","Divide twelve by three.","Divide đi với by."]]},
+{id:"g_c_add",sec:"comp",tp:"so",g:2,t:["Thành phần của phép cộng","Parts of an addition"],en:"addend · addend · sum",
+ kw:"số hạng addend tổng sum thành phần phép cộng parts",
+ eq:[["3","addend","số hạng"],["+"],["4","addend","số hạng"],["="],["7","sum","tổng"]],
+ fr:["In 3 + 4 = 7, 3 and 4 are the ___. 7 is the ___.","Trong 3 + 4 = 7, 3 và 4 là các ___. 7 là ___."],fa:["addends","sum"],
+ alt:[["the numbers you add","các số được cộng"],["the total","tổng (nói thường ngày)"]]},
+{id:"g_c_sub",sec:"comp",tp:"so",g:2,t:["Thành phần của phép trừ","Parts of a subtraction"],en:"minuend · subtrahend · difference",
+ kw:"số bị trừ số trừ minuend subtrahend hiệu difference thành phần phép trừ parts",
+ eq:[["9","minuend","số bị trừ"],["−"],["5","subtrahend","số trừ"],["="],["4","difference","hiệu"]],
+ fr:["In 9 − 5 = 4, 9 is the ___. 5 is the ___. 4 is the ___.","Trong 9 − 5 = 4, 9 là ___. 5 là ___. 4 là ___."],fa:["minuend","subtrahend","difference"],
+ alt:[["the first number (9)","số đứng đầu"],["the number you take away (5)","số bị bớt đi"],["the answer","kết quả (nói thường ngày)"]]},
+{id:"g_c_mul",sec:"comp",tp:"so",g:2,t:["Thành phần của phép nhân","Parts of a multiplication"],en:"factor · factor · product",
+ kw:"thừa số factor tích product thành phần phép nhân parts",
+ eq:[["3","factor","thừa số"],["×"],["4","factor","thừa số"],["="],["12","product","tích"]],
+ fr:["In 3 × 4 = 12, 3 and 4 are the ___. 12 is the ___.","Trong 3 × 4 = 12, 3 và 4 là các ___. 12 là ___."],fa:["factors","product"],
+ alt:[["the numbers you multiply","các số được nhân"],["the answer","kết quả (nói thường ngày)"]],
+ note:"Product còn có nghĩa là 'sản phẩm', factor còn có nghĩa là 'yếu tố'. Trong toán, hãy nói rõ: product of 3 and 4."},
+{id:"g_c_div",sec:"comp",tp:"so",g:2,t:["Thành phần của phép chia","Parts of a division"],en:"dividend · divisor · quotient",
+ kw:"số bị chia số chia dividend divisor thương quotient thành phần phép chia parts remainder dư",
+ eq:[["12","dividend","số bị chia"],[":"],["3","divisor","số chia"],["="],["4","quotient","thương"]],
+ fr:["In 12 : 3 = 4, 12 is the ___. 3 is the ___. 4 is the ___.","Trong 12 : 3 = 4, 12 là ___. 3 là ___. 4 là ___."],fa:["dividend","divisor","quotient"],
+ alt:[["the number you divide (12)","số được chia"],["the number you divide by (3)","số chia"],["the answer","kết quả (nói thường ngày)"]],
+ note:"Phép chia có dư: 13 : 3 = 4 remainder 1 (thương 4, số dư 1)."},
+{id:"g_ang",sec:"geo",tp:"hh",g:3,t:["Các loại góc","Types of angles"],en:"right · acute · obtuse · straight angle",
+ kw:"góc angle nhọn acute vuông right tù obtuse bẹt straight vertex đỉnh cạnh arm degree độ",
+ rows:[["angle","góc","Hai cạnh (arms) gặp nhau tại một đỉnh (vertex)."],["vertex","đỉnh (của góc)","Điểm hai cạnh gặp nhau. Số nhiều: vertices."],["arm","cạnh (của góc)","Hai tia tạo nên góc."],["right angle","góc vuông","Bằng 90°."],["acute angle","góc nhọn","Nhỏ hơn 90°."],["obtuse angle","góc tù","Lớn hơn 90° và nhỏ hơn 180°."],["straight angle","góc bẹt","Bằng 180°, tạo thành một đường thẳng."],["degree","độ (°)","Đơn vị đo góc."]],
+ ex:[["A [right angle] is exactly ninety degrees.","Góc vuông bằng đúng chín mươi độ."],["An [acute angle] is smaller than a right angle.","Góc nhọn nhỏ hơn góc vuông."],["An [obtuse angle] is bigger than a right angle but smaller than a straight angle.","Góc tù lớn hơn góc vuông nhưng nhỏ hơn góc bẹt."],["A [straight angle] is a straight line: one hundred and eighty degrees.","Góc bẹt là một đường thẳng: một trăm tám mươi độ."]],
+ fr:["This is an ___ angle because it is ___ than a right angle.","Đây là góc ___ vì nó ___ góc vuông."],fa:["acute","smaller"],
+ bad:[["It is a 90 degrees angle.","It is a ninety-degree angle.","Khi đứng trước danh từ, degree không thêm s và có dấu gạch nối."]]}
+];
+const GRPR={};GRPS.forEach(x=>GRPR[x.id]=x);
+function grpMark(s,full){return s.split(/(\[[^\]]+\])/).map(p=>{const m=p.match(/^\[([^\]]+)\]$/);if(!m)return esc(p);return full?'<mark>'+esc(m[1])+'</mark>':'<span class="bl" role="img" aria-label="'+T("chỗ trống","blank")+'"></span>';}).join("");}
+const grpPlain=s=>s.replace(/[\[\]]/g,"");
+function grpFilled(x){let i=0;return x.fr[0].replace(/___/g,()=>x.fa[i++]||"");}
+function grpSay(x){return x.fr&&x.eq?grpFilled(x):(x.ex?grpPlain(x.ex[0][0]):grpFilled(x));}
+function grpFrameHL(x){let i=0;return esc(x.fr[0]).replace(/___/g,()=>'<mark>'+esc(x.fa[i++]||"")+'</mark>');}
+function grpCard(id){
+  const x=GRPR[id],L=S.level,rev=!!S.rev[id],full=L===1||rev,l3=L===3&&!rev;
+  let h='<article class="card gx" data-card="'+esc(id)+'"><div class="row"><div class="head"><h3 class="term">'+esc(l3?x.t[0]:(x.eq?x.t[1]:x.en))+'</h3></div><div class="acts">'+sayBtn(grpSay(x))+copyBtn(grpSay(x))+favBtn(id)+'</div></div>';
+  if(full)h+='<p class="vi">'+esc(x.t[0])+'</p>';
+  if(x.id==="g_ang")h+=ilAngGroup(full);
+  if(l3)h+='<p class="fvh">'+T("Gợi ý: nhóm này có "+(x.rows?x.rows.length:x.eq.filter(p=>p.length>1).length)+" từ. Em nói được mấy từ?","Hint: this group has "+(x.rows?x.rows.length:x.eq.filter(p=>p.length>1).length)+" words. How many can you say?")+'</p>';
+  if(x.eq){
+    h+='<div class="eq">'+x.eq.map(p=>p.length===1?'<span class="eqo">'+esc(p[0])+'</span>':'<div class="eqb"><b>'+esc(p[0])+'</b><span>'+(full?esc(p[1]):(L===2?'<span class="bl" role="img" aria-label="'+T("chỗ trống","blank")+'"></span>':''))+'</span>'+(full?'<i>'+esc(p[2])+'</i>':'')+'</div>').join("")+'</div>';
+  }
+  if(x.rows&&full)h+='<div class="grow">'+x.rows.map(r=>'<div><b>'+esc(r[0])+'</b><span>'+esc(r[1])+'</span><small>'+esc(r[2])+'</small></div>').join("")+'</div>';
+  if(x.rows&&L===2)h+='<p class="fvh">'+x.rows.map(r=>esc(r[0])).join(" · ")+'</p>';
+  if(x.ex&&!l3){
+    h+='<div class="exs"><p class="sublbl">'+T("Ví dụ","Examples")+'</p><ul class="exl">'+x.ex.map(e=>'<li><span class="exb"><span class="ene">'+grpMark(e[0],full)+'</span>'+(full?'<span class="vie">'+esc(e[1])+'</span>':'')+'</span><button class="icon-btn mini" data-a="say" data-t="'+esc(grpPlain(e[0]))+'" aria-label="'+T("Nghe ví dụ","Listen")+'">'+ic("speaker")+'</button></li>').join("")+'</ul></div>';
+  }
+  if(x.fr&&!l3){
+    h+='<div class="exs"><p class="sublbl">'+T("Khung câu","Sentence frame")+'</p><p class="ene">'+(full?grpFrameHL(x):fbk(x.fr[0]))+'</p>'+(full?'<p class="vie">'+esc(x.fr[1])+'</p>':'')+'</div>';
+  }
+  if(x.alt&&full)h+='<div class="exs"><p class="sublbl">'+T("Cách nói thông dụng trong lớp","Everyday classroom wording")+'</p><div class="grow">'+x.alt.map(a=>'<div><b>'+esc(a[0])+'</b><span>'+esc(a[1])+'</span></div>').join("")+'</div></div>';
+  if(x.note&&full)h+='<p class="fvh">'+esc(x.note)+'</p>';
+  if(x.bad&&full)h+='<div class="exs"><p class="sublbl">'+T("Hay nói nhầm","Common mistakes")+'</p>'+x.bad.map(b=>'<div class="bad"><span class="no">✗ '+esc(b[0])+'</span><span class="yes">✓ '+esc(b[1])+'</span><small>'+esc(b[2])+'</small></div>').join("")+'</div>';
+  let meta=gtag(x.g)+'<span class="tag n">'+esc(TOPICS[x.tp][S.lang==="vi"?0:1])+'</span>';
+  if(L>1)meta+='<button class="btn mini" data-a="rv" data-v="'+esc(id)+'">'+(rev?T("Ẩn đáp án","Hide answer"):T("Xem đáp án","Show answer"))+'</button>';
+  return h+'<div class="meta">'+meta+'</div></article>';
+}
+function grpView(){
+  const gs=GRPS.filter(x=>S.grade===0||x.g<=S.grade);
+  const sec=(t,k)=>{const l=gs.filter(x=>x.sec===k);return l.length?'<p class="sec-t">'+t+' · '+l.length+'</p><div class="list">'+l.map(x=>grpCard(x.id)).join("")+'</div>':"";};
+  return '<p class="sub">'+T("Các từ hay bị lẫn, gom thành nhóm kèm cách dùng và lỗi thường gặp.","Words that get mixed up, grouped with how to use each and common mistakes.")+'</p>'
+    +sec(T("Bốn phép tính: nói cho đúng","The four operations: saying them right"),"op")
+    +sec(T("Thành phần của phép tính","Parts of a calculation"),"comp")
+    +sec(T("Hình học","Geometry"),"geo")
+    +(gs.length?'':'<div class="card empty">'+T("Chưa có nhóm từ cho lớp này.","No word groups for this grade yet.")+'</div>');
+}
+/* ---- tìm kiếm ---- */
+const dia=s=>String(s).toLowerCase().normalize("NFC");
+const wclean=s=>s.replace(/[^\p{L}\p{N}]+/gu," ").trim();
+function termScore(t,q,fn){
+  const qq=wclean(fn(q));if(!qq)return 0;let best=0;
+  [t.en,String(t.vi).replace(/\(.*?\)/g,"")].forEach(h=>{
+    const hw=" "+wclean(fn(h))+" ";let v=0;
+    if(hw.trim()===qq)v=5;
+    else if(hw.indexOf(" "+qq+" ")===0)v=4;
+    else if(hw.indexOf(" "+qq+" ")>=0)v=3;
+    else if(hw.indexOf(" "+qq)>=0)v=2;
+    else if(qq.length>=3&&hw.indexOf(qq)>=0)v=1;
+    if(v>best)best=v;
+  });
+  return best;
+}
+function grpHit(x,q,fn){
+  const qt=wclean(fn(q)).split(" ").filter(Boolean),kt=wclean(fn(x.kw)).split(" ");
+  return qt.length>0&&qt.every(a=>kt.some(k=>k.indexOf(a)===0));
+}
+function termSearch(q){
+  const qs=q.trim();
+  let all=allTerms();if(S.topic!=="all")all=all.filter(t=>t.topic===S.topic);
+  const cur=t=>(S.grade===0||t.g===0||t.g===S.grade)?0:1;
+  const passes=dia(qs)!==norm(qs)?[dia,norm]:[norm];
+  for(let i=0;i<passes.length;i++){
+    const fn=passes[i];
+    const r=all.map(t=>[t,termScore(t,qs,fn)]).filter(x=>x[1]>0);
+    const gr=(S.topic==="all"&&wclean(qs).length>=2)?GRPS.filter(x=>grpHit(x,qs,fn)):[];
+    if(r.length||gr.length){
+      r.sort((a,b)=>b[1]-a[1]||cur(a[0])-cur(b[0])||a[0].g-b[0].g);
+      return {terms:r.map(x=>x[0]),groups:gr};
+    }
+  }
+  const nq=norm(qs);
+  const l=all.filter(t=>norm(t.ex+" "+t.exVi).includes(nq)).sort((a,b)=>cur(a)-cur(b)||a.g-b.g);
+  return {terms:l,groups:[]};
+}
+
+/* ================= CÁCH ĐỌC SỐ: giao diện ================= */
+const NRULES=[
+{id:"n_frac",t:["Phân số","Fractions"],ex:["1/3","2/3","5/8","1/2","3/4","17/20"],
+ rule:"Tử số đọc như số đếm (one, two, three…). Mẫu số đọc như số thứ tự (third, fifth, eighth…). Tử số lớn hơn 1 thì mẫu số thêm s: one third → two thirds. Ngoại lệ: mẫu số 2 là half(halves), mẫu số 4 là quarter(s). Mẫu số khó đọc thì dùng over: 17/20 là seventeen over twenty.",
+ bad:[["two third","two thirds","Tử số lớn hơn 1 thì mẫu số thêm s."]]},
+{id:"n_mixed",t:["Hỗn số","Mixed numbers"],ex:["2 3/4","1 1/2","5 2/3"],
+ rule:"Đọc phần nguyên, thêm and, rồi đọc phân số: 2 3/4 là two and three quarters."},
+{id:"n_dec",t:["Số thập phân","Decimals"],ex:["3.14","0.5","12.05","0.25","100.001"],
+ rule:"Đọc phần nguyên như số thường, nói point, rồi đọc TỪNG chữ số một. Số 0 đọc là zero (người Anh còn nói nought).",
+ bad:[["three point fourteen","three point one four","Sau point, đọc từng chữ số, không đọc thành số hai chữ số."],["zero point twenty-five","zero point two five","0.25 đọc từng chữ số: two five."]]},
+{id:"n_pct",t:["Phần trăm","Percentages"],ex:["25%","100%","12.5%","7%"],fr:"Fifty percent of eighty is forty.",
+ rule:"Đọc số rồi thêm percent. Không thêm s vào percent."},
+{id:"n_ratio",t:["Tỉ số","Ratios"],ex:["2:3","1:4","1:1000"],fr:"The ratio of boys to girls is two to three.",
+ rule:"Đọc to ở giữa hai số: 2:3 là two to three. Khác với phân số: 2/3 đọc là two thirds."},
+{id:"n_big",t:["Số lớn","Large numbers"],ex:["305","12 345","1 005","250 000","1 000 000"],
+ rule:"Tách từ phải sang trái, mỗi nhóm 3 chữ số, đọc từng nhóm rồi thêm thousand, million… Tiếng Anh (Anh) thêm and trước hai chữ số cuối: 305 là three hundred and five. Tiếng Anh (Mỹ) thường bỏ and.",
+ bad:[["three hundreds","three hundred","Sau số đếm, hundred, thousand, million không thêm s."],["five thousands","five thousand","Sau số đếm, thousand không thêm s."]]}
+];
+function nrCard(r){
+  const L=S.level,rev=!!S.rev[r.id],full=L===1||rev,l3=L===3&&!rev,uk=S.nsty==="uk";
+  let h='<article class="card gx" data-card="'+r.id+'"><div class="row"><div class="head"><h3 class="term">'+esc(l3?r.t[0]:r.t[1])+'</h3></div></div>';
+  if(full)h+='<p class="vi">'+esc(r.t[0])+'</p>';
+  h+='<ul class="exl nlist">'+r.ex.map(s=>{const o=readNum(s,uk);return '<li><span class="nsym">'+esc(s)+'</span>'+(l3?'':'<span class="exb"><span class="ene">'+esc(o.en)+'</span></span><button class="icon-btn mini" data-a="say" data-t="'+esc(o.en)+'" aria-label="'+T("Nghe","Listen")+'">'+ic("speaker")+'</button>')+'</li>';}).join("")+'</ul>';
+  if(r.fr&&!l3)h+='<div class="exs"><p class="sublbl">'+T("Khung câu","Sentence frame")+'</p><p class="ene">'+esc(r.fr)+'</p></div>';
+  if(full)h+='<p class="vi" style="font-weight:500;color:var(--ink)">'+esc(r.rule)+'</p>';
+  if(l3)h+='<p class="fvh">'+T("Em hãy đọc to từng số. Bấm “Xem đáp án” để kiểm tra.","Read each number aloud. Tap “Show answer” to check.")+'</p>';
+  if(r.bad&&full)h+='<div class="exs"><p class="sublbl">'+T("Hay nói nhầm","Common mistakes")+'</p>'+r.bad.map(b=>'<div class="bad"><span class="no">✗ '+esc(b[0])+'</span><span class="yes">✓ '+esc(b[1])+'</span><small>'+esc(b[2])+'</small></div>').join("")+'</div>';
+  if(L>1)h+='<div class="meta"><button class="btn mini" data-a="rv" data-v="'+r.id+'">'+(rev?T("Ẩn đáp án","Hide answer"):T("Xem đáp án","Show answer"))+'</button></div>';
+  return h+'</article>';
+}
+function nOut(){
+  const q=S.nq.trim(),uk=S.nsty==="uk";
+  if(!q)return '<p class="fvh">'+T("Ví dụ: 3/4 · 2 1/2 · 3,14 · 3.14 · 25% · 2:3 · 12 345","e.g. 3/4 · 2 1/2 · 3.14 · 25% · 2:3 · 12,345")+'</p>';
+  const r=readNum(q,uk);
+  if(!r)return "";
+  if(r.err)return '<div class="bad"><span class="no">'+esc(r.err)+'</span></div>';
+  const row=(en,cls)=>'<div class="nres'+(cls||"")+'"><div class="nmain">'+esc(en)+'</div><div class="acts">'+sayBtn(en)+copyBtn(en)+'</div></div>';
+  let h=row(r.en);
+  if(r.why)h+='<p class="fvh">'+esc(r.why)+'</p>';
+  (r.alts||[]).forEach(a=>{h+='<p class="fvh">'+esc(a.why)+'</p>'+row(a.en," alt");});
+  (r.notes||[]).forEach(n=>{h+='<div class="warn">'+esc(n)+'</div>';});
+  return h;
+}
+function numTool(){
+  const uk=S.nsty==="uk";
+  return '<section class="card sticker gx" data-card="ntool"><h2 style="font-size:1.1rem">'+T("Gõ số bất kỳ để nghe cách đọc","Type any number to hear how to say it")+'</h2>'
+   +'<div class="search">'+ic("search")+'<input id="nq" type="text" inputmode="decimal" value="'+esc(S.nq)+'" placeholder="'+T("3/4, 2 1/2, 3.14, 25%, 2:3, 12345","3/4, 2 1/2, 3.14, 25%, 2:3, 12345")+'" autocomplete="off" aria-label="'+T("Gõ số","Type a number")+'"></div>'
+   +'<div class="chips">'+chip("nsty","uk",T("Anh (có and)","UK (with and)"),uk)+chip("nsty","us",T("Mỹ (bỏ and)","US (no and)"),!uk)+'</div>'
+   +'<div id="nout">'+nOut()+'</div></section>'
+   +'<div class="warn"><b>'+T("Dấu thập phân","Decimal sign")+'</b> · '+T("Việt Nam viết dấu phẩy (3,14). Tiếng Anh viết dấu chấm (3.14) và đọc là point.","Vietnam writes a comma (3,14). English writes a point (3.14) and says point.")+'</div>'
+   +'<div class="warn"><b>'+T("Dấu tách hàng nghìn","Thousands separator")+'</b> · '+T("Việt Nam viết 12 345 hoặc 12.345. Tiếng Anh viết 12,345 (dấu phẩy). Hai cách ngược nhau, rất dễ nhầm.","Vietnam writes 12 345 or 12.345. English writes 12,345 (a comma). They are opposites, so it is easy to mix them up.")+'</div>';
+}
+function numRules(){
+  return numTool()+'<p class="sec-t">'+T("Quy tắc đọc","Reading rules")+' · '+NRULES.length+'</p><div class="list">'+NRULES.map(nrCard).join("")+'</div>';
+}
+
 function filterTerms(){
+  const q=S.q.trim();
+  if(q)return termSearch(q).terms;
   let l=pool();
   if(S.topic!=="all")l=l.filter(t=>t.topic===S.topic);
-  const q=norm(S.q.trim());
-  if(q)l=l.filter(t=>norm(t.en+" "+t.vi+" "+t.ex+" "+t.exVi).includes(q));
   return l;
 }
 function dictList(){
-  const l=filterTerms();
-  return l.length?l.map(t=>cardHTML(t.id)).join(""):'<div class="empty">'+T("Không tìm thấy thuật ngữ phù hợp. Thử đổi lớp hoặc từ khóa.","No matching term. Try another grade or keyword.")+'</div>';
+  const q=S.q.trim(),empty='<div class="empty">'+T("Không tìm thấy thuật ngữ phù hợp. Thử đổi từ khóa.","No matching term. Try another keyword.")+'</div>';
+  if(!q){const l=filterTerms();return l.length?l.map(t=>cardHTML(t.id)).join(""):empty;}
+  const r=termSearch(q);
+  const body=r.groups.map(x=>grpCard(x.id)).join("")+r.terms.map(t=>cardHTML(t.id)).join("");
+  return body?(S.grade!==0?'<p class="fvh">'+T("Đang tìm trong mọi lớp.","Searching all grades.")+'</p>':'')+body:empty;
 }
 function look(){
-  const tabs='<div class="chips">'+chip("ltab","t",T("Thuật ngữ","Terms"),S.lookTab==="t")+chip("ltab","r",T("Đọc ký hiệu","Reading maths"),S.lookTab==="r")+chip("ltab","w",T("Bài toán đố","Word problems"),S.lookTab==="w")+'</div>';
+  const tabs='<div class="chips">'+chip("ltab","t",T("Thuật ngữ","Terms"),S.lookTab==="t")+chip("ltab","r",T("Đọc ký hiệu","Reading maths"),S.lookTab==="r")+chip("ltab","w",T("Bài toán đố","Word problems"),S.lookTab==="w")+chip("ltab","g",T("Nhóm từ","Word groups"),S.lookTab==="g")+'</div>';
+  if(S.lookTab==="g")return '<div class="stack">'+h1m(T("Tra cứu","Look up"),"owl")+tabs+grpView()+'</div>';
   if(S.lookTab==="w")return '<div class="stack">'+h1m(T("Tra cứu","Look up"),"owl")+tabs+'<p class="sub">'+T("Khuôn câu cho các dạng bài toán đố: đọc đề, hỏi dẫn dắt, nói lời giải. Thay tên, số và đồ vật vào các ô.","Frames for word-problem types: reading the problem, guiding questions, saying the solution. Swap in names, numbers and things.")+'</p>'+wpView()+'</div>';
   if(S.lookTab==="r"){
     const l=readsPool();
-    return '<div class="stack">'+h1m(T("Tra cứu","Look up"),"owl")+''+tabs+'<p class="sub">'+T("Cách đọc to phép tính, phân số, số thập phân và công thức bằng tiếng Anh.","How to say sums, fractions, decimals and formulas aloud in English.")+'</p><p class="count num">'+l.length+' '+T("mục","items")+'</p><div class="list">'+l.map(r=>cardHTML(r.id)).join("")+'</div></div>';
+    return '<div class="stack">'+h1m(T("Tra cứu","Look up"),"owl")+''+tabs+'<p class="sub">'+T("Cách đọc to phép tính, phân số, số thập phân và công thức bằng tiếng Anh.","How to say sums, fractions, decimals and formulas aloud in English.")+'</p>'+numRules()+'<p class="sec-t">'+T("Mẫu đọc cố định","Fixed readings")+' · '+l.length+'</p><div class="list">'+l.map(r=>cardHTML(r.id)).join("")+'</div></div>';
   }
   const keys=["so","ps","th","hh","dl","tk","kh"];
   return '<div class="stack">'+h1m(T("Tra cứu","Look up"),"owl")+''+tabs
@@ -1631,7 +2173,7 @@ function initPrac(){
   const p=studyPool();
   const unk=shuffle(p.filter(t=>!S.known[t.id])),kn=shuffle(p.filter(t=>S.known[t.id]));
   S.fc={deck:unk.concat(kn).map(t=>t.id),i:0,flip:false,got:0};
-  S.rp=null;S.qz={cur:null,score:0,n:0};S.ty={cur:null,score:0,n:0,hint:false,res:null,val:""};S.sh.i=0;
+  S.rp=null;S.qz={cur:null,score:0,n:0};S.ty={cur:null,score:0,n:0,hint:false,res:null,val:""};S.sh.i=0;S.pic={sub:S.pic?S.pic.sub:"say",cur:null,score:0,n:0,last:null};
 }
 function mkOptions(correct,labelFn,list){
   const same=shuffle(list.filter(x=>x.id!==correct.id&&x.topic===correct.topic));
@@ -1648,7 +2190,15 @@ function nextItem(prev){
   return t;
 }
 function newQuiz(){
-  const t=nextItem(S.qz.cur&&S.qz.cur.item.id);const L=S.level;
+  const L=S.level;
+  if(S.qz.n%4===3){
+    const pp=picPool(true);
+    if(pp.length>=4){
+      const t2=pick(pp),o=picOptions(t2,pp);
+      if(o){S.qz.cur={item:t2,mode:(Math.floor(S.qz.n/4)%2===0)?"p2w":"w2p",opts:o.opts,idx:o.idx,picked:null};return;}
+    }
+  }
+  const t=nextItem(S.qz.cur&&S.qz.cur.item.id);
   let mode=L===1?"e2v":(L===2?"v2e":"cz");
   if(mode==="cz"&&!canCloze(t))mode="v2e";
   const m=mode==="e2v"?mkOptions(t,x=>x.vi,allTerms()):mkOptions(t,x=>x.en,allTerms());
@@ -1657,10 +2207,11 @@ function newQuiz(){
 function newTyping(){S.ty.cur=nextItem(S.ty.cur&&S.ty.cur.id);S.ty.hint=S.level===1;S.ty.res=null;S.ty.val="";}
 
 function prac(){
-  const modes=[["flash",T("Thẻ nhớ","Flashcards")],["quiz",T("Trắc nghiệm","Quiz")],["shadow",T("Nghe và nói","Listen & speak")],["type",T("Gõ","Type")],["role",T("Tập dượt","Rehearse")]];
-  const head=''+h1m(T("Luyện tập","Practice"),"turtle")+'<div class="chips">'+modes.map(m=>chip("pmode",m[0],m[1],S.pmode===m[0])).join("")+(S.pmode!=="shadow"&&S.pmode!=="role"?chip("onlyfav",1,T("Chỉ từ đã lưu","Saved only"),S.onlyFav):"")+'</div>';
+  const modes=[["flash",T("Thẻ nhớ","Flashcards")],["pic",T("Nhìn hình","Pictures")],["quiz",T("Trắc nghiệm","Quiz")],["shadow",T("Nghe và nói","Listen & speak")],["type",T("Gõ","Type")],["role",T("Tập dượt","Rehearse")]];
+  const head=''+h1m(T("Luyện tập","Practice"),"turtle")+'<div class="chips">'+modes.map(m=>chip("pmode",m[0],m[1],S.pmode===m[0])).join("")+(S.pmode!=="shadow"&&S.pmode!=="role"&&S.pmode!=="pic"?chip("onlyfav",1,T("Chỉ từ đã lưu","Saved only"),S.onlyFav):"")+'</div>';
   if(S.pmode==="shadow")return '<div class="stack">'+head+shadowHTML()+'</div>';
   if(S.pmode==="role")return '<div class="stack">'+head+rpView()+'</div>';
+  if(S.pmode==="pic")return '<div class="stack">'+head+picHTML()+'</div>';
   if(!studyPool().length)return '<div class="stack">'+head+'<div class="card empty">'+T("Chưa có từ nào để luyện. Lưu vài từ bằng nút sao trong Tra cứu, hoặc tắt bộ lọc.","Nothing to practise yet. Save some words with the star in Look up, or turn the filter off.")+'</div></div>';
   let body="";
   if(S.pmode==="flash")body=fcHTML();else if(S.pmode==="quiz")body=qzHTML();else body=tyHTML();
@@ -1678,10 +2229,10 @@ function fcHTML(){
     front='<span class="hint">'+T("Điền từ còn thiếu","Fill in the missing word")+'</span><span class="ctx-sent">'+fbk(maskEx(t))+'</span>'+(t.exVi?'<span class="hint">'+esc(t.exVi)+'</span>':'');
     back='<span class="big">'+esc(t.en)+'</span><span class="ipa">'+esc(t.ipa)+'</span><span class="vi">'+esc(t.vi)+'</span>'+sayBtn(t.en);
   }else if(L>=2){
-    front='<span class="hint">'+T("Từ tiếng Anh là gì?","What is the English word?")+'</span><span class="big">'+esc(t.vi)+'</span>';
+    front='<span class="hint">'+T("Từ tiếng Anh là gì?","What is the English word?")+'</span>'+ilFor(t.en)+'<span class="big">'+esc(t.vi)+'</span>';
     back='<span class="big">'+esc(t.en)+'</span><span class="ipa">'+esc(t.ipa)+'</span>'+sayBtn(t.en)+(t.ex?'<p class="ex" style="border:0;margin:0">'+esc(t.ex)+'</p>':'');
   }else{
-    front='<span class="big">'+esc(t.en)+'</span><span class="ipa">'+esc(t.ipa)+'</span><span class="hint">'+T("Chạm để lật thẻ","Tap to flip")+'</span>'+sayBtn(t.en);
+    front=ilFor(t.en)+'<span class="big">'+esc(t.en)+'</span><span class="ipa">'+esc(t.ipa)+'</span><span class="hint">'+T("Chạm để lật thẻ","Tap to flip")+'</span>'+sayBtn(t.en);
     back='<span class="big" style="font-size:1.9rem">'+esc(t.vi)+'</span>'+(t.ex?'<p class="ex" style="border:0;margin:0">'+esc(t.ex)+'<span>'+esc(t.exVi)+'</span></p>':'');
   }
   return '<div class="stats num"><span>'+T("Thẻ","Card")+' <b>'+(f.i+1)+'/'+f.deck.length+'</b></span><span>'+T("Đã nhớ tổng","Known overall")+' <b>'+knownCount()+'</b></span></div>'
@@ -1692,14 +2243,16 @@ function fcHTML(){
 function qzHTML(){
   if(!S.qz.cur)newQuiz();
   const q=S.qz.cur,t=q.item,m=q.mode;
-  const opts=q.opts.map((o,i)=>{let c="opt";if(q.picked!==null){if(i===q.idx)c+=" right";else if(i===q.picked)c+=" wrong";}
-    return '<button class="'+c+'" data-a="qzpick" data-v="'+i+'"'+(q.picked!==null?" disabled":"")+'>'+esc(m==="e2v"?o.vi:o.en)+'</button>';}).join("");
+  const opts=q.opts.map((o,i)=>{let c="opt"+(m==="w2p"?" pic":"");if(q.picked!==null){if(i===q.idx)c+=" right";else if(i===q.picked)c+=" wrong";}
+    return '<button class="'+c+'" data-a="qzpick" data-v="'+i+'"'+(q.picked!==null?" disabled":"")+'>'+(m==="w2p"?ilFor(o.en):esc(m==="e2v"?o.vi:o.en))+'</button>';}).join("");
   let ph;
   if(m==="e2v")ph='<span class="sub">'+T("Nghĩa tiếng Việt của từ này là gì?","What does this word mean in Vietnamese?")+'</span><span class="big">'+esc(t.en)+'</span>'+sayBtn(t.en);
+  else if(m==="p2w")ph='<span class="sub">'+T("Đây là gì?","What is this?")+'</span>'+ilFor(t.en);
+  else if(m==="w2p")ph=(S.level===3?'<span class="sub">'+T("Nghe từ rồi chọn hình đúng","Listen, then pick the right picture")+'</span><button class="btn pri" data-a="say" data-t="'+esc(t.en)+'">'+ic("speaker")+' '+T("Nghe từ","Play word")+'</button>':'<span class="sub">'+T("Hình nào là:","Which picture shows:")+'</span><span class="big">'+esc(t.en)+'</span>'+(S.level===1?'<span class="vi">'+esc(t.vi)+'</span>':'')+sayBtn(t.en));
   else if(m==="v2e")ph='<span class="sub">'+T("Từ tiếng Anh nào có nghĩa này?","Which English word means this?")+'</span><span class="big">'+esc(t.vi)+'</span>';
   else ph='<span class="sub">'+T("Chọn từ điền vào chỗ trống","Pick the word that fills the blank")+'</span><span class="ctx-sent">'+fbk(maskEx(t))+'</span>'+(t.exVi?'<span class="sub" style="font-size:.88rem">'+esc(t.exVi)+'</span>':'');
   const ans=m==="e2v"?t.vi:t.en;
-  return '<div class="stats num"><span>'+T("Điểm","Score")+' <b>'+S.qz.score+'/'+S.qz.n+'</b></span></div><div class="card prompt">'+ph+'</div><div class="opts">'+opts+'</div>'
+  return '<div class="stats num"><span>'+T("Điểm","Score")+' <b>'+S.qz.score+'/'+S.qz.n+'</b></span></div><div class="card prompt">'+ph+'</div><div class="opts'+(m==="w2p"?" pics":"")+'">'+opts+'</div>'
    +(q.picked!==null?'<p class="feedback '+(q.picked===q.idx?"ok":"no")+'">'+(q.picked===q.idx?T("Chính xác!","Correct!"):T("Chưa đúng. Đáp án: ","Not quite. Answer: ")+esc(ans))+'</p><button class="btn pri" data-a="qznext">'+T("Câu tiếp","Next")+ic("right")+'</button>':'');
 }
 function tyHTML(){
@@ -1789,7 +2342,9 @@ function numOpts(ans,dec,unit){
   const all=shuffle([ans].concat(ds));
   return {opts:all.map(v=>(dec?v.toFixed(1):String(v))+(unit||"")),idx:all.indexOf(ans)};
 }
-function mathQ(L){
+let _lastMathSym="";
+function mathQ(L){let q=mathQ0(L),n=0;while(q.sym===_lastMathSym&&n++<8)q=mathQ0(L);_lastMathSym=q.sym;return q;}
+function mathQ0(L){
   const g=S.grade||ri(1,5);let sym,en,vi,ans,dec=false,unit="";
   if(g===1){
     if(Math.random()<.5){const a=ri(1,12),b=ri(1,20-a);ans=a+b;sym=a+" + "+b+" = ?";en="What is "+nw(a)+" plus "+nw(b)+"?";vi=a+" cộng "+b+" bằng mấy?";}
@@ -1798,9 +2353,11 @@ function mathQ(L){
     if(Math.random()<.5){const a=pick([2,3,4,5,10]),b=ri(1,10);ans=a*b;sym=a+" × "+b+" = ?";en="What is "+nw(a)+" times "+nw(b)+"?";vi=a+" nhân "+b+" bằng mấy?";}
     else{const a=ri(10,60),b=ri(10,39);ans=a+b;sym=a+" + "+b+" = ?";en="What is the sum of "+nw(a)+" and "+nw(b)+"?";vi="Tổng của "+a+" và "+b+" là bao nhiêu?";}
   }else if(g===3){
-    const b=ri(2,9),q=ri(1,9),r=ri(1,b-1),a=b*q+r;
-    if(Math.random()<.5){ans=q;sym=a+" ÷ "+b+" → thương = ?";en="Divide "+nw(a)+" by "+nw(b)+". What is the quotient?";vi=a+" chia "+b+". Thương là bao nhiêu?";}
-    else{ans=r;sym=a+" ÷ "+b+" → số dư = ?";en="Divide "+nw(a)+" by "+nw(b)+". What is the remainder?";vi=a+" chia "+b+". Số dư là bao nhiêu?";}
+    const k=ri(0,3),b=ri(2,9),q=ri(2,9),r=ri(1,b-1);
+    if(k===0){const a=b*q;ans=q;sym=a+" : "+b+" = ?";en="What is "+nw(a)+" divided by "+nw(b)+"?";vi=a+" chia "+b+" bằng mấy?";}
+    else if(k===1){const a=b*q+r;ans=r;sym=a+" : "+b+" = "+q+" (dư ?)";en="Divide "+nw(a)+" by "+nw(b)+". The quotient is "+nw(q)+". What is the remainder?";vi=a+" chia "+b+" được "+q+". Số dư là bao nhiêu?";}
+    else if(k===2){const x=ri(2,9),y=ri(2,9);ans=x*y;sym=x+" × "+y+" = ?";en="What is "+nw(x)+" times "+nw(y)+"?";vi=x+" nhân "+y+" bằng mấy?";}
+    else{const x=ri(100,600),y=ri(100,350);ans=x+y;sym=x+" + "+y+" = ?";en="What is "+nw(x)+" plus "+nw(y)+"?";vi=x+" cộng "+y+" bằng mấy?";}
   }else if(g===4){
     const k=ri(0,2);
     if(k===0){const n=4*ri(2,12);ans=n/4;sym="1/4 của "+n+" = ?";en="What is a quarter of "+nw(n)+"?";vi="Một phần tư của "+n+" là bao nhiêu?";}
@@ -1814,6 +2371,7 @@ function mathQ(L){
   return {kind:"m",sym:sym,en:en,vi:vi,opts:o.opts,idx:o.idx,say:en,ans:(dec?ans.toFixed(1):String(ans))+unit,audio:L===3&&hasTTS()};
 }
 function vocabQ(i,terms,rds,L){
+  if(i%4===3&&picPool(true).length>=4){const pq=picQ(i,L,i===3);if(pq)return pq;}
   const all=allTerms();const withEx=terms.filter(canCloze);
   const types=L===1?["e2v","v2e","rd"]:(L===2?["v2e","cz","rd"]:["cz","rd","ls"]);
   let ty=types[i%3];
@@ -1828,7 +2386,7 @@ function vocabQ(i,terms,rds,L){
   const m=mkOptions(t,x=>x.en,all);return {kind:"v",prompt:t.vi,cls:"big",hint:T("Chọn từ tiếng Anh đúng","Pick the English word"),opts:m.opts.map(x=>x.en),idx:m.idx,say:t.en,ans:t.en};
 }
 let gTimer=null;
-function stopGame(){clearInterval(gTimer);gTimer=null;}
+function stopGame(){clearInterval(gTimer);gTimer=null;bgStop();}
 function speakQ(){const g=S.game;if(!g||g.state!=="play"||g.picked!==null)return;const q=g.qs[g.i];if(q&&q.audio)setTimeout(()=>say(q.say),150);}
 function gStart(kind){
   const L=S.level,lim=[0,24,20,16][L];
@@ -1870,16 +2428,18 @@ function promptHTML(q,g){
     if(L===1)return '<span class="sub">'+T("Chọn đáp án đúng","Pick the correct answer")+'</span><span class="sym">'+esc(q.sym)+'</span><span class="ctx-sent" style="font-size:1.05rem">'+esc(q.en)+'</span><span class="sub" style="font-size:.86rem">'+esc(q.vi)+'</span>'+sayBtn(q.say);
     return '<span class="sub">'+T("Chọn đáp án đúng","Pick the correct answer")+'</span><span class="ctx-sent">'+esc(q.en)+'</span>'+sayBtn(q.say);
   }
+  if(q.kind==="p"&&q.pic)return '<span class="sub">'+q.hint+'</span>'+q.pic;
   if(q.audio)return '<span class="sub">'+q.hint+'</span><button class="btn pri" data-a="gplay">'+ic("speaker")+' '+T("Nghe lại","Play again")+'</button>';
   return '<span class="sub">'+q.hint+'</span><span class="'+(q.cls==="sym"?"sym":(q.cls==="sent"?"ctx-sent":"big"))+'">'+fbk(q.prompt)+'</span>'+(q.cls==="big"&&q.kind==="v"?sayBtn(q.say):'');
 }
 function playView(){
   const g=S.game;
+  if(S.bg)return bgView(S.bg);
   if(!g){
     const c=(k,t,d,i)=>'<button class="card feat" style="--c:'+(k==="v"?"var(--pen)":"var(--g3)")+'" data-a="gstart" data-v="'+k+'"><span class="tile">'+ic(i)+'</span><h3>'+t+'</h3><p>'+d+'</p><p class="num" style="margin-top:2px">'+T("Điểm cao nhất: ","Best: ")+'<b style="color:var(--ink)">'+S.best[k]+'</b></p></button>';
     return '<div class="stack">'+h1m(T("Trò chơi","Games"),"rabbit")+'<p class="sub">'+T("10 câu, tính giờ, điểm thưởng khi đúng liên tục. Có một quyền 50:50 và một quyền bỏ qua. Mức giàn giáo ở trên đổi cách hiện câu hỏi và thời gian.","10 questions, timed, with streak bonuses. One 50:50 and one skip. The scaffold level above changes how questions appear and the time limit.")+'</p>'
      +'<div class="card"><p class="stats">'+T("Phạm vi: ","Scope: ")+'<b>'+(S.grade?T("Lớp "+S.grade,"Grade "+S.grade):T("Tất cả các lớp","All grades"))+'</b><span>'+T("Mức ","Level ")+'<b>'+S.level+' · '+lvN(S.level)+'</b></span><span>'+T("Thời gian mỗi câu: ","Time per question: ")+'<b>'+[0,24,20,16][S.level]+' s</b></span></p></div>'
-     +'<div class="grid">'+c("v",T("Gameshow từ vựng","Vocabulary gameshow"),T("Nghĩa, điền từ, cách đọc ký hiệu, nghe và chọn.","Meaning, fill the blank, reading symbols, listening."),"trophy")+c("m",T("Toán bằng tiếng Anh","Maths in English"),T("Nghe hoặc đọc câu hỏi Toán bằng tiếng Anh rồi chọn đáp số.","Hear or read a maths question in English, pick the answer."),"sigma")+'</div></div>';
+     +'<div class="grid">'+c("v",T("Gameshow từ vựng","Vocabulary gameshow"),T("Nghĩa, điền từ, cách đọc ký hiệu, nghe và chọn.","Meaning, fill the blank, reading symbols, listening."),"trophy")+'<button class="card feat" style="--c:var(--g1)" data-a="bsetup"><span class="tile">'+ic("trophy")+'</span><h3>'+T("Cờ xúc xắc","Dice board game")+'</h3><p>'+T("Tung xúc xắc đi trên bản đồ, đến ô nào trả lời câu hỏi ô đó. Chơi theo đội trên một màn hình.","Roll the dice and move along the map. Answer the question on your square. Play in teams on one screen.")+'</p></button>'+c("m",T("Toán bằng tiếng Anh","Maths in English"),T("Nghe hoặc đọc câu hỏi Toán bằng tiếng Anh rồi chọn đáp số.","Hear or read a maths question in English, pick the answer."),"sigma")+'</div></div>';
   }
   if(g.state==="end"){
     const pct=Math.round(g.correct/10*100);
@@ -1888,13 +2448,138 @@ function playView(){
   }
   const q=g.qs[g.i];
   const opts=q.opts.map((o,i)=>{let c="opt";if(g.hidden.indexOf(i)>=0)c+=" gone";else if(g.picked!==null){if(i===q.idx)c+=" right";else if(i===g.picked)c+=" wrong";}
-    return '<button class="'+c+'" data-a="gpick" data-v="'+i+'"'+(g.picked!==null?" disabled":"")+'>'+esc(o)+'</button>';}).join("");
+    return '<button class="'+c+(q.optPic?" pic":"")+'" data-a="gpick" data-v="'+i+'"'+(g.picked!==null?" disabled":"")+'>'+(q.optPic?o:esc(o))+'</button>';}).join("");
   return '<div class="stack"><div class="ghead num"><span>'+T("Câu","Question")+' '+(g.i+1)+'/10</span><span>'+T("Điểm","Score")+' '+g.score+'</span><span>'+T("Chuỗi đúng","Streak")+' '+g.streak+'</span><span id="gleft">'+Math.ceil(g.left)+'</span></div>'
    +'<div class="gbar'+(g.left<6?" low":"")+'" id="gbar" aria-hidden="true"><i style="width:'+(g.left/g.lim*100)+'%"></i></div>'
-   +'<div class="card prompt">'+promptHTML(q,g)+'</div><div class="opts">'+opts+'</div>'
+   +'<div class="card prompt">'+promptHTML(q,g)+'</div><div class="opts'+(q.optPic?" pics":"")+'">'+opts+'</div>'
    +(g.picked===null?'<div class="btns"><button class="btn" data-a="g5050"'+(g.l5050?"":" disabled")+'>50:50</button><button class="btn" data-a="gskip"'+(g.lskip?"":" disabled")+'>'+T("Bỏ qua câu này","Skip")+'</button></div>'
     :'<p class="feedback '+(g.picked===q.idx?"ok":"no")+'">'+(g.picked===q.idx?T("Chính xác! +","Correct! +")+g.gain:(g.picked===-1?T("Hết giờ. Đáp án: ","Time is up. Answer: "):T("Chưa đúng. Đáp án: ","Not quite. Answer: "))+esc(q.ans))+'</p><div class="btns"><button class="btn pri" data-a="gnext">'+(g.i===9?T("Xem kết quả","See results"):T("Câu tiếp","Next"))+ic("right")+'</button></div>')
    +'<button class="btn mini" data-a="gquit" style="align-self:flex-start">'+T("Thoát trò chơi","Quit game")+'</button></div>';
+}
+
+/* ================= CỜ XÚC XẮC (BOARD GAME) ================= */
+const BG_END=35,BG_COL=["#d9482b","#1f6fc0","#14803f","#8a3fc6"],BG_NAME=["Đỏ","Xanh dương","Xanh lá","Tím"],BG_NAME_EN=["Red","Blue","Green","Purple"];
+let bgTimer=null;
+function bgStop(){clearTimeout(bgTimer);bgTimer=null;S.bg=null;}
+function bgCell(i){const r=Math.floor(i/6),c=i%6;return {x:(r%2?5-c:c)*60,y:r*60};}
+function bgLayout(){
+  const sp={},ks=["ahead","back","miss","again","ahead","back","miss","again"];
+  const cand=shuffle(Array.from({length:30},(_,i)=>i+3));const used=[];
+  for(const c of cand){if(used.length>=ks.length)break;if(used.every(u=>Math.abs(u-c)>1)){sp[c]=ks[used.length];used.push(c);}}
+  return sp;
+}
+function bgTok(k,x,y,r){
+  const f=BG_COL[k];const a='fill="'+f+'" stroke="#fff" stroke-width="1.6"';
+  if(k===0)return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" '+a+'/>';
+  if(k===1)return '<rect x="'+(x-r)+'" y="'+(y-r)+'" width="'+2*r+'" height="'+2*r+'" rx="2" '+a+'/>';
+  if(k===2)return '<polygon points="'+x+','+(y-r-1)+' '+(x+r+1)+','+(y+r)+' '+(x-r-1)+','+(y+r)+'" '+a+'/>';
+  return '<polygon points="'+x+','+(y-r-1)+' '+(x+r+1)+','+y+' '+x+','+(y+r+1)+' '+(x-r-1)+','+y+'" '+a+'/>';
+}
+function bgDie(v,sz){
+  const P={1:[[1,1]],2:[[0,0],[2,2]],3:[[0,0],[1,1],[2,2]],4:[[0,0],[2,0],[0,2],[2,2]],5:[[0,0],[2,0],[1,1],[0,2],[2,2]],6:[[0,0],[2,0],[0,1],[2,1],[0,2],[2,2]]}[v]||[];
+  return '<svg class="bgdie" viewBox="0 0 60 60" width="'+sz+'" height="'+sz+'" aria-label="'+v+'"><rect x="3" y="3" width="54" height="54" rx="12" fill="var(--card)" stroke="var(--ink)" stroke-width="3"/>'+P.map(p=>'<circle cx="'+(16+p[0]*14)+'" cy="'+(16+p[1]*14)+'" r="5" fill="var(--ink)"/>').join("")+'</svg>';
+}
+const BG_SP={ahead:["Move ahead 2","Tiến 2 ô"],back:["Go back 3","Lùi 3 ô"],miss:["Miss a turn","Mất một lượt"],again:["Roll again","Tung lại"]};
+function bgBoard(b){
+  let o='<svg viewBox="-4 -4 368 368" class="bgsvg" role="img" aria-label="'+T("Bản đồ cờ xúc xắc","Board game map")+'">';
+  let d="";for(let i=0;i<=BG_END;i++){const c=bgCell(i);d+=(i?"L":"M")+(c.x+30)+","+(c.y+30);}
+  o+='<path d="'+d+'" fill="none" stroke="var(--line)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>';
+  for(let i=0;i<=BG_END;i++){
+    const c=bgCell(i),sp=b.sp[i];let fill=i===0||i===BG_END?"var(--hi)":"color-mix(in srgb, var(--g"+(1+i%4)+") 20%, var(--card))";
+    let ic="",lab="";
+    if(sp==="ahead"){fill="color-mix(in srgb, var(--good) 38%, var(--card))";ic='<path d="M20,36 L28,28 L20,20 M30,36 L38,28 L30,20" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(6,6)"/>';lab="+2";}
+    else if(sp==="back"){fill="color-mix(in srgb, var(--bad) 38%, var(--card))";ic='<path d="M36,36 L28,28 L36,20 M26,36 L18,28 L26,20" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(6,6)"/>';lab="−3";}
+    else if(sp==="miss"){fill="color-mix(in srgb, var(--muted) 30%, var(--card))";ic='<rect x="21" y="19" width="6" height="18" rx="2" fill="var(--ink)"/><rect x="33" y="19" width="6" height="18" rx="2" fill="var(--ink)"/>';}
+    else if(sp==="again"){fill="color-mix(in srgb, var(--hi) 70%, var(--card))";ic='<rect x="19" y="19" width="22" height="22" rx="5" fill="var(--card)" stroke="var(--ink)" stroke-width="2.5"/><circle cx="25" cy="25" r="2.4" fill="var(--ink)"/><circle cx="35" cy="35" r="2.4" fill="var(--ink)"/><circle cx="30" cy="30" r="2.4" fill="var(--ink)"/>';}
+    o+='<g transform="translate('+(c.x+5)+','+(c.y+5)+')"><rect width="50" height="50" rx="12" fill="'+fill+'" stroke="var(--ink)" stroke-width="2"/>'+(ic?'<g transform="translate(-5,-5)">'+ic+'</g>':'')
+      +(i===0?'<text x="25" y="19" class="bgtx big">Start</text>':(i===BG_END?'<text x="25" y="19" class="bgtx big">Finish</text>':'<text x="8" y="16" class="bgtx num">'+i+'</text>'))
+      +(lab?'<text x="38" y="44" class="bgtx num" text-anchor="middle">'+lab+'</text>':'')+'</g>';
+  }
+  const at={};b.pos.forEach((p,k)=>{(at[p]=at[p]||[]).push(k);});
+  Object.keys(at).forEach(p=>{const c=bgCell(+p);at[p].forEach((k,j)=>{const ox=[-9,9,-9,9][j]||0,oy=[7,7,19,19][j]||0;const cx=c.x+30+(at[p].length>1?ox:0),cy=c.y+(at[p].length>1?[22,22,40,40][j]:36);o+=bgTok(k,cx,cy,at[p].length>1?7:9);});});
+  return o+'</svg>';
+}
+function bgQ(b){
+  const L=S.level;let q=null;
+  for(let t=0;t<8;t++){
+    const useM=b.mode==="m"||(b.mode==="mix"&&Math.random()<.45);
+    if(useM)q=mathQ(L);else{const terms=pool().length?pool():allTerms();q=vocabQ(b.cnt++,terms,readsPool(),L);}
+    const key=q.sym||q.prompt||q.say||q.en;if(!b.seen[key]||t===7){b.seen[key]=1;break;}
+  }
+  return q;
+}
+function bgNext(b){
+  let n=0;do{b.turn=(b.turn+1)%b.n;n++;if(b.skip[b.turn]){b.skip[b.turn]=false;b.note=b.turn;continue;}break;}while(n<8);
+  b.state="roll";b.q=null;b.picked=null;
+}
+function bgMove(b,to,after){
+  clearTimeout(bgTimer);const k=b.turn;
+  const stepf=()=>{
+    if(!S.bg)return;
+    if(b.pos[k]===to){after();render();return;}
+    b.pos[k]+=b.pos[k]<to?1:-1;render();bgTimer=setTimeout(stepf,230);
+  };
+  stepf();
+}
+function bgLand(b){
+  const k=b.turn,p=b.pos[k];
+  if(p>=BG_END){b.state="end";b.win=k;try{beep();}catch(e){}return;}
+  const sp=b.sp[p];
+  if(!sp){b.q=bgQ(b);b.picked=null;b.peek=false;b.state="q";if(b.q.audio&&hasTTS())setTimeout(()=>say(b.q.say),200);return;}
+  b.state="fx";b.fx=sp;
+}
+function bgFx(b){
+  const k=b.turn,sp=b.fx;b.fx=null;
+  if(sp==="again"){b.state="roll";b.msg=null;return render();}
+  if(sp==="miss"){b.skip[k]=true;bgNext(b);return render();}
+  const to=sp==="ahead"?Math.min(BG_END,b.pos[k]+2):Math.max(0,b.pos[k]-3);
+  b.state="move";bgMove(b,to,()=>{if(b.pos[k]>=BG_END){b.state="end";b.win=k;}else bgNext(b);});
+}
+function bgRoll(b){
+  if(b.state!=="roll")return;
+  b.state="rolling";let n=0;
+  const f=()=>{
+    if(!S.bg)return;
+    if(n++<9){b.die=ri(1,6);render();bgTimer=setTimeout(f,75);return;}
+    b.die=ri(1,6);b.from=b.pos[b.turn];b.state="move";render();
+    bgMove(b,Math.min(BG_END,b.from+b.die),()=>bgLand(b));
+  };f();
+}
+function bgView(b){
+  const S0=b;
+  if(b.state==="setup"){
+    return '<div class="stack">'+h1m(T("Cờ xúc xắc","Dice board game"),"rabbit")
+     +'<p class="sub">'+T("Tung xúc xắc, đi đến ô nào thì trả lời câu hỏi của ô đó. Trả lời đúng thì ở lại, sai thì quay về ô cũ. Ai đến Finish trước thắng. Các ô đặc biệt được xáo trộn mỗi ván.","Roll the dice and answer the question on the square you land on. Right answer: stay. Wrong: go back. First to Finish wins. Special squares are shuffled every game.")+'</p>'
+     +'<div class="card sect"><p class="sublbl">'+T("Số đội / người chơi","Players or teams")+'</p><div class="chips">'+[1,2,3,4].map(n=>chip("bn",n,String(n),b.n===n)).join("")+'</div>'
+     +'<p class="sublbl" style="margin-top:10px">'+T("Loại câu hỏi","Question type")+'</p><div class="chips">'+chip("bmode","mix",T("Trộn cả hai","Mixed"),b.mode==="mix")+chip("bmode","m",T("Toán","Maths"),b.mode==="m")+chip("bmode","v",T("Từ vựng","Vocabulary"),b.mode==="v")+'</div>'
+     +'<p class="stats" style="margin-top:10px">'+T("Phạm vi: ","Scope: ")+'<b>'+(S.grade?T("Lớp "+S.grade,"Grade "+S.grade):T("Tất cả các lớp","All grades"))+'</b><span>'+T("Mức ","Level ")+'<b>'+S.level+' · '+lvN(S.level)+'</b></span></p></div>'
+     +'<div class="btns"><button class="btn pri" data-a="bstart">'+ic("play")+' '+T("Bắt đầu","Start")+'</button><button class="btn" data-a="bquit">'+T("Quay lại","Back")+'</button></div></div>';
+  }
+  const cur=b.turn;
+  const players='<div class="bgp">'+Array.from({length:b.n},(_,k)=>'<span class="bgpl'+(k===cur&&b.state!=="end"?" on":"")+'"><svg viewBox="-12 -12 24 24" width="22" height="22">'+bgTok(k,0,0,8)+'</svg><b>'+T(BG_NAME[k],BG_NAME_EN[k])+'</b><span class="num">'+b.pos[k]+'/'+BG_END+'</span></span>').join("")+'</div>';
+  const head='<div class="stack">'+players+'<div class="card bgcard">'+bgBoard(b)+'</div>';
+  const tail='<button class="btn mini" data-a="bquit" style="align-self:flex-start">'+T("Thoát trò chơi","Quit game")+'</button></div>';
+  const who='<b style="color:'+BG_COL[cur]+'">'+T(BG_NAME[cur],BG_NAME_EN[cur])+'</b>';
+  if(b.state==="end"){
+    return '<div class="stack"><h1>'+T("Chiến thắng!","We have a winner!")+'</h1><div class="card" style="text-align:center;padding:20px"><svg viewBox="-12 -12 24 24" width="64" height="64">'+bgTok(b.win,0,0,9)+'</svg><h2 style="margin-top:6px">'+T("Đội ","Team ")+T(BG_NAME[b.win],BG_NAME_EN[b.win])+'</h2><p class="sub" style="margin-top:4px">'+T("đã về đích!","reached the finish!")+'</p></div><div class="card bgcard">'+bgBoard(b)+'</div>'
+      +'<div class="btns"><button class="btn pri" data-a="bstart">'+ic("reset")+' '+T("Chơi lại","Play again")+'</button><button class="btn" data-a="bquit">'+T("Thoát","Exit")+'</button></div></div>';
+  }
+  let act="";
+  if(b.state==="roll"||b.state==="rolling"||b.state==="move"){
+    act='<div class="card bgact">'+(b.note!=null?'<p class="sub">'+T("Đội ","Team ")+T(BG_NAME[b.note],BG_NAME_EN[b.note])+T(" mất lượt này."," misses a turn.")+'</p>':'')+'<p class="bgturn">'+T("Lượt của ","Turn: ")+who+'</p>'
+      +(b.die?bgDie(b.die,72):bgDie(6,72))
+      +(b.state==="roll"?'<button class="btn pri" data-a="broll">'+T("Tung xúc xắc","Roll the dice")+' · <span class="sub" style="color:inherit">Roll the dice</span></button>':'<p class="sub">'+(b.state==="move"&&b.die?T("Đi ","Move ")+b.die+T(" ô…"," squares…"):'…')+'</p>')+'</div>';
+  }else if(b.state==="fx"){
+    const e=BG_SP[b.fx];
+    act='<div class="card bgact"><p class="bgturn">'+who+'</p><h2>'+e[0]+'</h2><p class="sub">'+e[1]+'</p>'+sayBtn(e[0])+'<button class="btn pri" data-a="bfx">'+T("Tiếp tục","Continue")+'</button></div>';
+  }else if(b.state==="q"){
+    const q=b.q;
+    const opts=q.opts.map((o,i)=>{let c="opt";if(b.picked!==null){if(i===q.idx)c+=" right";else if(i===b.picked)c+=" wrong";}return '<button class="'+c+(q.optPic?" pic":"")+'" data-a="bpick" data-v="'+i+'"'+(b.picked!==null?" disabled":"")+'>'+(q.optPic?o:esc(o))+'</button>';}).join("");
+    act='<div class="card bgact" style="align-items:stretch"><p class="bgturn" style="text-align:center">'+who+' · '+T("ô số ","square ")+b.pos[cur]+'</p><div class="prompt" style="padding:6px 4px">'+promptHTML(q,b)+'</div></div><div class="opts'+(q.optPic?" pics":"")+'">'+opts+'</div>'
+      +(b.picked===null?'':'<p class="feedback '+(b.picked===q.idx?"ok":"no")+'">'+(b.picked===q.idx?T("Chính xác! Ở lại ô này.","Correct! Stay on this square."):T("Chưa đúng. Đáp án: ","Not quite. Answer: ")+esc(q.ans)+T(". Quay về ô số ",". Go back to square ")+b.from)+'</p><div class="btns"><button class="btn pri" data-a="bnext">'+T("Lượt tiếp theo","Next turn")+'</button></div>');
+  }
+  if(b.state==="q"||b.state==="fx")return '<div class="stack">'+players+act+'<div class="card bgcard">'+bgBoard(b)+'</div>'+tail;
+  return head+act+tail;
 }
 
 /* ================= KHO CỦA TÔI ================= */
@@ -1904,9 +2589,9 @@ function mine(){
   let body="";
   if(tab==="sv"){
     const ids=Object.keys(S.favs);
-    const terms=ids.filter(id=>termById(id)),stc=ids.filter(id=>STRR[id]),wpi=ids.filter(id=>WPR[id]),ph=ids.filter(id=>PH[id]&&!STRR[id]),rd=ids.filter(id=>RDR[id]);
+    const terms=ids.filter(id=>termById(id)),stc=ids.filter(id=>STRR[id]),wpi=ids.filter(id=>WPR[id]),ph=ids.filter(id=>PH[id]&&!STRR[id]),rd=ids.filter(id=>RDR[id]),gp=ids.filter(id=>GRPR[id]);
     const sect=(t,l)=>l.length?'<p class="sec-t">'+t+' · '+l.length+'</p><div class="list">'+l.map(cardHTML).join("")+'</div>':'';
-    body=(terms.length+stc.length+wpi.length+ph.length+rd.length)?sect(T("Thuật ngữ","Terms"),terms)+sect(T("Cấu trúc câu","Structures"),stc)+sect(T("Bài toán đố","Word problems"),wpi)+sect(T("Câu trong bài dạy","Lesson lines"),ph)+sect(T("Đọc ký hiệu","Readings"),rd):'<div class="card empty">'+T("Chưa lưu mục nào. Bấm biểu tượng ngôi sao ở thẻ để lưu.","Nothing saved yet. Tap the star on a card to save it.")+'</div>';
+    body=(terms.length+stc.length+wpi.length+ph.length+rd.length+gp.length)?sect(T("Thuật ngữ","Terms"),terms)+sect(T("Nhóm từ","Word groups"),gp)+sect(T("Cấu trúc câu","Structures"),stc)+sect(T("Bài toán đố","Word problems"),wpi)+sect(T("Câu trong bài dạy","Lesson lines"),ph)+sect(T("Đọc ký hiệu","Readings"),rd):'<div class="card empty">'+T("Chưa lưu mục nào. Bấm biểu tượng ngôi sao ở thẻ để lưu.","Nothing saved yet. Tap the star on a card to save it.")+'</div>';
   }else if(tab==="cu"){
     body='<form class="card form" data-form="addterm"><h3 style="font-size:1.05rem">'+T("Thêm từ của riêng bạn","Add your own term")+'</h3>'
      +'<label for="cen">'+T("Tiếng Anh","English")+'<input id="cen" required maxlength="60" autocomplete="off"></label>'
@@ -1933,7 +2618,7 @@ function presHTML(){
   const id=p.ids[p.i];const L=S.level;const f=faceOf(id,L,p.rev);if(!f)return "";
   const t=S.timer;
   return '<div class="pres" role="dialog" aria-modal="true" aria-label="'+T("Trình chiếu","Presentation")+'" id="presroot"><div class="pres-top"><span>'+esc(p.title)+' · <span class="num">'+(p.i+1)+' / '+p.ids.length+'</span></span><button class="icon-btn" data-a="presclose" aria-label="'+T("Đóng","Close")+'">'+ic("x2")+'</button></div>'
-   +'<div class="pres-main" id="pmain" data-a="presrev"><div class="big '+((f.kind==="p"||f.kind==="s")?"ph":"")+'" style="'+(f.kind==="r"?"font-family:var(--f-i)":"")+'">'+fbk(f.main)+'</div>'
+   +'<div class="pres-main" id="pmain" data-a="presrev">'+(f.kind==="t"?ilFor(f.t.en):'')+'<div class="big '+((f.kind==="p"||f.kind==="s")?"ph":"")+'" style="'+(f.kind==="r"?"font-family:var(--f-i)":"")+'">'+fbk(f.main)+'</div>'
    +(f.kind==="t"&&f.sub?'<div class="bi">'+esc(f.sub)+'</div>':'')+(f.kind==="s"&&f.sub?'<div class="bi" style="font-size:clamp(1.1rem,4.5vw,1.6rem)">'+esc(f.sub)+'</div>':'')+(f.kind==="r"&&f.sub?'<div class="bv" style="color:var(--on-board);font-size:clamp(1.3rem,5vw,2rem);font-weight:600">'+fbk(f.sub)+'</div>':'')
    +(f.vi&&!p.hideVi?'<div class="bv">'+esc(f.vi)+'</div>':'')
    +(f.can?'<div class="tapn">'+(p.rev?T("Chạm để ẩn đáp án","Tap to hide the answer"):T("Chạm để xem đáp án","Tap to show the answer"))+'</div>':'')+'</div>'
@@ -1975,7 +2660,7 @@ function go(v){
   render();window.scrollTo(0,0);
 }
 function applyTheme(){try{if(S.theme)document.documentElement.setAttribute("data-theme",S.theme);else document.documentElement.removeAttribute("data-theme");}catch(e){}}
-function resetForLevel(){S.rev={};S.qz.cur=null;S.ty.cur=null;S.fc.flip=false;if(S.game){stopGame();S.game=null;}}
+function resetForLevel(){S.rev={};S.pic.cur=null;S.qz.cur=null;S.ty.cur=null;S.fc.flip=false;if(S.game){stopGame();S.game=null;}}
 
 /* ================= HÀNH ĐỘNG ================= */
 const ACT={
@@ -2009,6 +2694,12 @@ const ACT={
     const el=b.dataset.full?null:document.querySelector('[data-card="'+v+'"]');
     if(el)el.outerHTML=cardHTML(v);else render();},
   ltab:v=>{S.lookTab=v;render();},
+  psub:v=>{S.pic.sub=v;S.pic.cur=null;S.pic.score=0;S.pic.n=0;render();},
+  prv:()=>{if(S.pic.cur)S.pic.cur.rev=!S.pic.cur.rev;render();},
+  ppick:v=>{const c=S.pic.cur;if(!c||!c.o||c.picked!==null)return;c.picked=+v;S.pic.n++;if(+v===c.o.idx)S.pic.score++;render();},
+  pnext:()=>{S.pic.cur=null;render();},
+  ppres:()=>{const ids=picPool(false).map(t=>t.id);if(ids.length)openPres(T("Nhìn hình","Pictures"),ids);},
+  nsty:v=>{S.nsty=v;store.set("nsty",v);render();},
   topic:v=>{S.topic=v;render();},
   idir:v=>{S.it.dir=v;S.it.cat=null;S.iq="";render();},
   icat:v=>{S.it.cat=v;render();window.scrollTo(0,0);},
@@ -2050,8 +2741,17 @@ const ACT={
   /* trò chơi */
   gstart:v=>{S.view="play";gStart(v);render();window.scrollTo(0,0);},
   gpick:v=>gAnswer(+v),
-  gplay:()=>{const g=S.game;if(g)say(g.qs[g.i].say);},
-  gpeek:()=>{S.game.peek=true;render();},
+  gplay:()=>{const g=S.bg||S.game;if(g)say((g.q||g.qs[g.i]).say);},
+  gpeek:()=>{const g=S.bg||S.game;if(g){g.peek=true;render();}},
+  bsetup:()=>{S.game=null;S.bg={state:"setup",n:2,mode:"mix"};render();window.scrollTo(0,0);},
+  bn:v=>{S.bg.n=+v;render();},
+  bmode:v=>{S.bg.mode=v;render();},
+  bstart:()=>{const n=S.bg?S.bg.n:2,m=S.bg?S.bg.mode:"mix";stopGame();S.bg={state:"roll",n:n,mode:m,pos:Array(n).fill(0),skip:Array(n).fill(false),turn:0,sp:bgLayout(),die:0,cnt:ri(0,2)*3,seen:{},q:null,picked:null,peek:false,note:null};render();window.scrollTo(0,0);},
+  broll:()=>{S.bg.note=null;bgRoll(S.bg);},
+  bfx:()=>bgFx(S.bg),
+  bpick:v=>{const b=S.bg;if(!b||b.picked!==null)return;b.picked=+v;if(b.picked===b.q.idx){touchDay();}render();},
+  bnext:()=>{const b=S.bg;if(!b)return;const ok=b.picked===b.q.idx;b.note=null;if(ok){bgNext(b);render();}else{b.state="move";bgMove(b,b.from,()=>{bgNext(b);});}},
+  bquit:()=>{bgStop();render();},
   g5050:()=>{const g=S.game;if(!g.l5050||g.picked!==null)return;g.l5050=false;const q=g.qs[g.i];g.hidden=shuffle(q.opts.map((o,i)=>i).filter(i=>i!==q.idx)).slice(0,2);render();},
   gskip:()=>{const g=S.game;if(!g.lskip||g.picked!==null)return;g.lskip=false;nextQ();},
   gnext:()=>nextQ(),
@@ -2071,6 +2771,7 @@ document.addEventListener("click",e=>{
 });
 document.addEventListener("input",e=>{
   if(e.target.id==="iq"){S.iq=e.target.value;const b=$("#ibody");if(b)b.innerHTML=itBody();document.querySelectorAll('[data-a="idir"]').forEach(x=>x.setAttribute("aria-pressed",(!S.iq.trim()&&x.dataset.v===S.it.dir)?"true":"false"));return;}
+  if(e.target.id==="nq"){S.nq=e.target.value;const o=$("#nout");if(o)o.innerHTML=nOut();return;}
   if(e.target.id==="dq"){S.q=e.target.value;const l=$("#list");if(l)l.innerHTML=dictList();const c=$("#dcount");if(c)c.textContent=filterTerms().length+" "+T("thuật ngữ","terms");}
 });
 document.addEventListener("change",e=>{
